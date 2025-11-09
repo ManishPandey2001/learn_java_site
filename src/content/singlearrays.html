@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Applet Programs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0b0b;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 30px 100px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(11,11,11,0.8);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 400;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff4d4d;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-left: 40px;
+    }
+
+    .login {
+      color: #ff4d4d;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .content {
+      padding: 140px 100px 100px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .program {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    }
+
+    .program h2 {
+      color: #ffb300;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+
+    pre {
+      background: #000;
+      color: #0f0;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .output {
+      background: #1b1b1b;
+      border-radius: 8px;
+      padding: 15px;
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .navbar {
+        padding: 20px 40px;
+      }
+      .content {
+        padding: 120px 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+
+  <section class="content">
+    <h1>Java Single Dimensional Array Programs</h1>
+
+    <!-- Program Blocks Start -->
+    <!-- Each block below follows your glowing modular format -->
+<!-- 1 -->
+<div class="program">
+  <h2>1. Copy all elements of one array into another</h2>
+  <pre>
+public class CopyArray {
+  public static void main(String[] args) {
+    int[] a = {1, 2, 3, 4, 5};
+    int[] b = new int[a.length];
+
+    for (int i = 0; i < a.length; i++)
+      b[i] = a[i];
+
+    for (int val : b)
+      System.out.print(val + " ");
+  }
+}
+  </pre>
+  <div class="output">Output: 1 2 3 4 5</div>
+</div>
+
+<!-- 2 -->
+<div class="program">
+  <h2>2. Frequency of each element in the array</h2>
+  <pre>
+public class FrequencyArray {
+  public static void main(String[] args) {
+    int[] arr = {1, 2, 2, 3, 1, 4};
+    int[] freq = new int[arr.length];
+    boolean[] visited = new boolean[arr.length];
+
+    for (int i = 0; i < arr.length; i++) {
+      if (!visited[i]) {
+        freq[i] = 1;
+        for (int j = i + 1; j < arr.length; j++) {
+          if (arr[i] == arr[j]) {
+            freq[i]++;
+            visited[j] = true;
+          }
+        }
+        System.out.println(arr[i] + " occurs " + freq[i] + " times");
+      }
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Frequency of each element</div>
+</div>
+
+<!-- 3 -->
+<div class="program">
+  <h2>3. Left rotate array elements</h2>
+  <pre>
+public class LeftRotate {
+  public static void main(String[] args) {
+    int[] arr = {1, 2, 3, 4, 5};
+    int first = arr[0];
+
+    for (int i = 0; i < arr.length - 1; i++)
+      arr[i] = arr[i + 1];
+
+    arr[arr.length - 1] = first;
+
+    for (int val : arr)
+      System.out.print(val + " ");
+  }
+}
+  </pre>
+  <div class="output">Output: 2 3 4 5 1</div>
+</div>
+
+<!-- 4 -->
+<div class="program">
+  <h2>4. Print duplicate elements in array</h2>
+  <pre>
+public class DuplicateElements {
+  public static void main(String[] args) {
+    int[] arr = {1, 2, 3, 2, 4, 1};
+
+    System.out.println("Duplicate elements:");
+    for (int i = 0; i < arr.length; i++)
+      for (int j = i + 1; j < arr.length; j++)
+        if (arr[i] == arr[j])
+          System.out.println(arr[i]);
+  }
+}
+  </pre>
+  <div class="output">Output: 2<br>1</div>
+</div>
+
+<!-- 5 -->
+<div class="program">
+  <h2>5. Print elements of an array</h2>
+  <pre>
+public class PrintArray {
+  public static void main(String[] args) {
+    int[] arr = {10, 20, 30, 40};
+
+    for (int val : arr)
+      System.out.print(val + " ");
+  }
+}
+  </pre>
+  <div class="output">Output: 10 20 30 40</div>
+</div>
+<!-- 1 -->
+<div class="program">
+  <h2>1. Copy all elements of one array into another</h2>
+  <pre>
+public class CopyArray {
+  public static void main(String[] args) {
+    int[] a = {1, 2, 3, 4, 5};
+    int[] b = new int[a.length];
+
+    for (int i = 0; i < a.length; i++)
+      b[i] = a[i];
+
+    for (int val : b)
+      System.out.print(val + " ");
+  }
+}
+  </pre>
+  <div class="output">Output: 1 2 3 4 5</div>
+</div>
+
+<!-- 2 -->
+<div class="program">
+  <h2>2. Frequency of each element in the array</h2>
+  <pre>
+public class FrequencyArray {
+  public static void main(String[] args) {
+    int[] arr = {1, 2, 2, 3, 1, 4};
+    int[] freq = new int[arr.length];
+    boolean[] visited = new boolean[arr.length];
+
+    for (int i = 0; i < arr.length; i++) {
+      if (!visited[i]) {
+        freq[i] = 1;
+        for (int j = i + 1; j < arr.length; j++) {
+          if (arr[i] == arr[j]) {
+            freq[i]++;
+            visited[j] = true;
+          }
+        }
+        System.out.println(arr[i] + " occurs " + freq[i] + " times");
+      }
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Frequency of each element</div>
+</div>
+
+<!-- 3 -->
+<div class="program">
+  <h2>3. Left rotate array elements</h2>
+  <pre>
+public class LeftRotate {
+  public static void main(String[] args) {
+    int[] arr = {1, 2, 3, 4, 5};
+    int first = arr[0];
+
+    for (int i = 0; i < arr.length - 1; i++)
+      arr[i] = arr[i + 1];
+
+    arr[arr.length - 1] = first;
+
+    for (int val : arr)
+      System.out.print(val + " ");
+  }
+}
+  </pre>
+  <div class="output">Output: 2 3 4 5 1</div>
+</div>
+
+<!-- 4 -->
+<div class="program">
+  <h2>4. Print duplicate elements in array</h2>
+  <pre>
+public class DuplicateElements {
+  public static void main(String[] args) {
+    int[] arr = {1, 2, 3, 2, 4, 1};
+
+    System.out.println("Duplicate elements:");
+    for (int i = 0; i < arr.length; i++)
+      for (int j = i + 1; j < arr.length; j++)
+        if (arr[i] == arr[j])
+          System.out.println(arr[i]);
+  }
+}
+  </pre>
+  <div class="output">Output: 2<br>1</div>
+</div>
+
+<!-- 5 -->
+<div class="program">
+  <h2>5. Print elements of an array</h2>
+  <pre>
+public class PrintArray {
+  public static void main(String[] args) {
+    int[] arr = {10, 20, 30, 40};
+
+    for (int val : arr)
+      System.out.print(val + " ");
+  }
+}
+  </pre>
+  <div class="output">Output: 10 20 30 40</div>
+</div>
+<!-- 11 -->
+<div class="program">
+  <h2>11. Print number of elements in an array</h2>
+  <pre>
+public class ArrayLength {
+  public static void main(String[] args) {
+    int[] arr = {10, 20, 30, 40, 50};
+    System.out.println("Total elements: " + arr.length);
+  }
+}
+  </pre>
+  <div class="output">Output: Total elements: 5</div>
+</div>
+
+<!-- 12 -->
+<div class="program">
+  <h2>12. Print sum of all items in array</h2>
+  <pre>
+public class ArraySum {
+  public static void main(String[] args) {
+    int[] arr = {10, 20, 30, 40};
+    int sum = 0;
+
+    for (int val : arr)
+      sum += val;
+
+    System.out.println("Sum: " + sum);
+  }
+}
+  </pre>
+  <div class="output">Output: Sum: 100</div>
+</div>
+
+<!-- 13 -->
+<div class="program">
+  <h2>13. Right rotate array elements</h2>
+  <pre>
+public class RightRotate {
+  public static void main(String[] args) {
+    int[] arr = {1, 2, 3, 4, 5};
+    int last = arr[arr.length - 1];
+
+    for (int i = arr.length - 1; i > 0; i--)
+      arr[i] = arr[i - 1];
+
+    arr[0] = last;
+
+    for (int val : arr)
+      System.out.print(val + " ");
+  }
+}
+  </pre>
+  <div class="output">Output: 5 1 2 3 4</div>
+</div>
+
+<!-- 14 -->
+<div class="program">
+  <h2>14. Sort array in ascending order</h2>
+  <pre>
+import java.util.Arrays;
+
+public class SortAscending {
+  public static void main(String[] args) {
+    int[] arr = {5, 2, 8, 1};
+    Arrays.sort(arr);
+
+    for (int val : arr)
+      System.out.print(val + " ");
+  }
+}
+  </pre>
+  <div class="output">Output: 1 2 5 8</div>
+</div>
+
+<!-- 15 -->
+<div class="program">
+  <h2>15. Sort array in descending order</h2>
+  <pre>
+import java.util.Arrays;
+import java.util.Collections;
+
+public class SortDescending {
+  public static void main(String[] args) {
+    Integer[] arr = {5, 2, 8, 1};
+    Arrays.sort(arr, Collections.reverseOrder());
+
+    for (int val : arr)
+      System.out.print(val + " ");
+  }
+}
+  </pre>
+  <div class="output">Output: 8 5 2 1</div>
+</div>
+<!-- 16 -->
+<div class="program">
+  <h2>16. Find 3rd largest number in an array</h2>
+  <pre>
+import java.util.Arrays;
+
+public class ThirdLargest {
+  public static void main(String[] args) {
+    int[] arr = {5, 1, 9, 3, 7};
+    Arrays.sort(arr);
+    System.out.println("3rd Largest: " + arr[arr.length - 3]);
+  }
+}
+  </pre>
+  <div class="output">Output: 3rd Largest: 5</div>
+</div>
+
+<!-- 17 -->
+<div class="program">
+  <h2>17. Find 2nd largest number in an array</h2>
+  <pre>
+import java.util.Arrays;
+
+public class SecondLargest {
+  public static void main(String[] args) {
+    int[] arr = {10, 20, 5, 30};
+    Arrays.sort(arr);
+    System.out.println("2nd Largest: " + arr[arr.length - 2]);
+  }
+}
+  </pre>
+  <div class="output">Output: 2nd Largest: 20</div>
+</div>
+
+<!-- 18 -->
+<div class="program">
+  <h2>18. Find largest number in an array</h2>
+  <pre>
+public class LargestInArray {
+  public static void main(String[] args) {
+    int[] arr = {10, 25, 5, 40};
+    int max = arr[0];
+
+    for (int val : arr)
+      if (val > max) max = val;
+
+    System.out.println("Largest: " + max);
+  }
+}
+  </pre>
+  <div class="output">Output: Largest: 40</div>
+</div>
+
+<!-- 19 -->
+<div class="program">
+  <h2>19. Find 2nd smallest number in an array</h2>
+  <pre>
+import java.util.Arrays;
+
+public class SecondSmallest {
+  public static void main(String[] args) {
+    int[] arr = {8, 3, 1, 6, 2};
+    Arrays.sort(arr);
+    System.out.println("2nd Smallest: " + arr[1]);
+  }
+}
+  </pre>
+  <div class="output">Output: 2nd Smallest: 2</div>
+</div>
+
+<!-- 20 -->
+<div class="program">
+  <h2>20. Find smallest number in an array</h2>
+  <pre>
+public class SmallestInArray {
+  public static void main(String[] args) {
+    int[] arr = {10, 25, 5, 40};
+    int min = arr[0];
+
+    for (int val : arr)
+      if (val < min) min = val;
+
+    System.out.println("Smallest: " + min);
+  }
+}
+  </pre>
+  <div class="output">Output: Smallest: 5</div>
+</div>
+<!-- 21 -->
+<div class="program">
+  <h2>21. Remove duplicate elements from an array</h2>
+  <pre>
+public class RemoveDuplicates {
+  public static void main(String[] args) {
+    int[] arr = {1, 2, 2, 3, 4, 4, 5};
+    int[] temp = new int[arr.length];
+    int j = 0;
+
+    for (int i = 0; i < arr.length; i++) {
+      boolean found = false;
+      for (int k = 0; k < j; k++) {
+        if (arr[i] == temp[k]) {
+          found = true;
+          break;
+        }
+      }
+      if (!found) {
+        temp[j++] = arr[i];
+      }
+    }
+
+    for (int i = 0; i < j; i++)
+      System.out.print(temp[i] + " ");
+  }
+}
+  </pre>
+  <div class="output">Output: 1 2 3 4 5</div>
+</div>
+
+<!-- 22 -->
+<div class="program">
+  <h2>22. Print odd and even numbers from an array</h2>
+  <pre>
+public class OddEvenArray {
+  public static void main(String[] args) {
+    int[] arr = {10, 15, 20, 25, 30};
+
+    System.out.println("Even numbers:");
+    for (int val : arr)
+      if (val % 2 == 0)
+        System.out.print(val + " ");
+
+    System.out.println("\nOdd numbers:");
+    for (int val : arr)
+      if (val % 2 != 0)
+        System.out.print(val + " ");
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Even numbers: 10 20 30<br>Odd numbers: 15 25</div>
+</div>
+
+<!-- 23 -->
+<div class="program">
+  <h2>23. How to sort an array in Java</h2>
+  <pre>
+import java.util.Arrays;
+
+public class SortArray {
+  public static void main(String[] args) {
+    int[] arr = {5, 3, 8, 1, 2};
+    Arrays.sort(arr);
+
+    System.out.println("Sorted array:");
+    for (int val : arr)
+      System.out.print(val + " ");
+  }
+}
+  </pre>
+  <div class="output">Output: Sorted array: 1 2 3 5 8</div>
+</div>
+
+  </section>
+</body>
+</html>

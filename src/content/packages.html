@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Applet Programs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0b0b;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 30px 100px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(11,11,11,0.8);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 400;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff4d4d;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-left: 40px;
+    }
+
+    .login {
+      color: #ff4d4d;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .content {
+      padding: 140px 100px 100px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .program {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    }
+
+    .program h2 {
+      color: #ffb300;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+
+    pre {
+      background: #000;
+      color: #0f0;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .output {
+      background: #1b1b1b;
+      border-radius: 8px;
+      padding: 15px;
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .navbar {
+        padding: 20px 40px;
+      }
+      .content {
+        padding: 120px 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+
+  <section class="content">
+    <h1>Java Packages Programs</h1>
+
+    <!-- Program Blocks Start -->
+    <!-- Each block below follows your glowing modular format -->
+<!-- 1 -->
+<div class="program">
+  <h2>1. Access java.util.Date using import keyword</h2>
+  <pre>
+import java.util.Date;
+
+public class DateImport {
+  public static void main(String[] args) {
+    Date date = new Date();
+    System.out.println("Current Date: " + date);
+  }
+}
+  </pre>
+  <div class="output">Output: Current Date: [system date]</div>
+</div>
+
+<!-- 2 -->
+<div class="program">
+  <h2>2. Access java.util.Date using qualified way</h2>
+  <pre>
+public class DateQualified {
+  public static void main(String[] args) {
+    java.util.Date date = new java.util.Date();
+    System.out.println("Current Date: " + date);
+  }
+}
+  </pre>
+  <div class="output">Output: Current Date: [system date]</div>
+</div>
+
+<!-- 3 -->
+<div class="program">
+  <h2>3. Access java.util.Date using import and inheritance</h2>
+  <pre>
+import java.util.Date;
+
+class MyDate extends Date {
+  void showDate() {
+    System.out.println("Current Date: " + this);
+  }
+}
+
+public class DateInheritImport {
+  public static void main(String[] args) {
+    MyDate d = new MyDate();
+    d.showDate();
+  }
+}
+  </pre>
+  <div class="output">Output: Current Date: [system date]</div>
+</div>
+
+<!-- 4 -->
+<div class="program">
+  <h2>4. Access java.util.Date using qualified way and inheritance</h2>
+  <pre>
+class MyDate extends java.util.Date {
+  void showDate() {
+    System.out.println("Current Date: " + this);
+  }
+}
+
+public class DateInheritQualified {
+  public static void main(String[] args) {
+    MyDate d = new MyDate();
+    d.showDate();
+  }
+}
+  </pre>
+  <div class="output">Output: Current Date: [system date]</div>
+</div>
+
+<!-- 5 -->
+<div class="program">
+  <h2>5. Package with multiple default classes</h2>
+  <pre>
+// File: mypack/ClassA.java
+package mypack;
+class ClassA {
+  void showA() {
+    System.out.println("Class A");
+  }
+}
+
+// File: mypack/ClassB.java
+package mypack;
+class ClassB {
+  void showB() {
+    System.out.println("Class B");
+  }
+}
+
+// File: Test.java
+import mypack.*;
+
+public class Test {
+  public static void main(String[] args) {
+    ClassA a = new ClassA();
+    ClassB b = new ClassB();
+    a.showA();
+    b.showB();
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Class A<br>Class B</div>
+</div>
+
+<!-- 6 -->
+<div class="program">
+  <h2>6. Package with 4 public classes and method calls</h2>
+  <pre>
+// File: tools/One.java
+package tools;
+public class One {
+  public void show() {
+    System.out.println("Class One");
+  }
+}
+
+// File: tools/Two.java
+package tools;
+public class Two {
+  public void show() {
+    System.out.println("Class Two");
+  }
+}
+
+// File: tools/Three.java
+package tools;
+public class Three {
+  public void show() {
+    System.out.println("Class Three");
+  }
+}
+
+// File: tools/Four.java
+package tools;
+public class Four {
+  public void show() {
+    System.out.println("Class Four");
+  }
+}
+
+// File: Main.java
+import tools.*;
+
+public class Main {
+  public static void main(String[] args) {
+    new One().show();
+    new Two().show();
+    new Three().show();
+    new Four().show();
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Class One<br>Class Two<br>Class Three<br>Class Four</div>
+</div>
+
+<!-- 7 -->
+<div class="program">
+  <h2>7. Employee payroll processing using packages</h2>
+  <pre>
+// File: employee/Emp.java
+package employee;
+public class Emp {
+  public String name;
+  public int empid;
+  public String category;
+  public double bpay, hra, da, npay, pf, grosspay, incometax, allowance;
+
+  public void calculate() {
+    hra = bpay * 0.2;
+    da = bpay * 0.1;
+    pf = bpay * 0.05;
+    allowance = 1000;
+    grosspay = bpay + hra + da + allowance;
+    incometax = grosspay * 0.1;
+    npay = grosspay - pf - incometax;
+  }
+
+  public void display() {
+    System.out.println("Net Pay: " + npay);
+  }
+}
+
+// File: Emppay.java
+import employee.Emp;
+
+public class Emppay {
+  public static void main(String[] args) {
+    Emp e = new Emp();
+    e.name = "Goutam";
+    e.empid = 101;
+    e.category = "Developer";
+    e.bpay = 50000;
+    e.calculate();
+    e.display();
+  }
+}
+  </pre>
+  <div class="output">Output: Net Pay: [calculated value]</div>
+</div>
+
+<!-- 8 -->
+<div class="program">
+  <h2>8. Package with public class and protected members</h2>
+  <pre>
+// File: pack/Alpha.java
+package pack;
+public class Alpha {
+  protected String message = "Hello from protected member";
+}
+
+// File: TestAlpha.java
+import pack.*;
+
+class TestAlpha extends Alpha {
+  void show() {
+    System.out.println(message);
+  }
+
+  public static void main(String[] args) {
+    new TestAlpha().show();
+  }
+}
+  </pre>
+  <div class="output">Output: Hello from protected member</div>
+</div>
+
+<!-- 9 -->
+<div class="program">
+  <h2>9. Nested package c4.sample with protected members</h2>
+  <pre>
+// File: c4/sample/Nested.java
+package c4.sample;
+public class Nested {
+  protected String info = "Nested package access";
+}
+
+// File: AccessNested.java
+import c4.sample.*;
+
+class AccessNested extends Nested {
+  void show() {
+    System.out.println(info);
+  }
+
+  public static void main(String[] args) {
+    new AccessNested().show();
+  }
+}
+  </pre>
+  <div class="output">Output: Nested package access</div>
+</div>
+
+<!-- 10 -->
+<div class="program">
+  <h2>10. Package with public class and public members</h2>
+  <pre>
+// File: mylib/PublicClass.java
+package mylib;
+public class PublicClass {
+  public String data = "Public member accessed";
+}
+
+// File: UsePublic.java
+import mylib.*;
+
+public class UsePublic {
+  public static void main(String[] args) {
+    PublicClass pc = new PublicClass();
+    System.out.println(pc.data);
+  }
+}
+  </pre>
+  <div class="output">Output: Public member accessed</div>
+</div>
+
+  </section>
+</body>
+</html>

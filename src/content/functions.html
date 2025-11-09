@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Applet Programs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0b0b;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 30px 100px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(11,11,11,0.8);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 400;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff4d4d;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-left: 40px;
+    }
+
+    .login {
+      color: #ff4d4d;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .content {
+      padding: 140px 100px 100px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .program {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    }
+
+    .program h2 {
+      color: #ffb300;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+
+    pre {
+      background: #000;
+      color: #0f0;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .output {
+      background: #1b1b1b;
+      border-radius: 8px;
+      padding: 15px;
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .navbar {
+        padding: 20px 40px;
+      }
+      .content {
+        padding: 120px 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+ 
+
+  <section class="content">
+    <h1>Java Function Programs</h1>
+
+    <!-- Program Blocks Start -->
+    <!-- Each block below follows your glowing modular format -->
+<!-- 1 -->
+<div class="program">
+  <h2>1. Find the smallest number among three numbers</h2>
+  <pre>
+public class SmallestOfThree {
+  static int findSmallest(int a, int b, int c) {
+    return Math.min(a, Math.min(b, c));
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Smallest: " + findSmallest(10, 5, 8));
+  }
+}
+  </pre>
+  <div class="output">Output: Smallest: 5</div>
+</div>
+
+<!-- 2 -->
+<div class="program">
+  <h2>2. Compute the average of three numbers</h2>
+  <pre>
+public class AverageOfThree {
+  static double average(int a, int b, int c) {
+    return (a + b + c) / 3.0;
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Average: " + average(10, 20, 30));
+  }
+}
+  </pre>
+  <div class="output">Output: Average: 20.0</div>
+</div>
+
+<!-- 3 -->
+<div class="program">
+  <h2>3. Display the middle character(s) of a string</h2>
+  <pre>
+public class MiddleCharacter {
+  static String getMiddle(String str) {
+    int len = str.length();
+    if (len % 2 == 0) {
+      return str.substring(len / 2 - 1, len / 2 + 1);
+    } else {
+      return str.substring(len / 2, len / 2 + 1);
+    }
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Middle: " + getMiddle("hello"));
+    System.out.println("Middle: " + getMiddle("worlds"));
+  }
+}
+  </pre>
+  <div class="output">Output: Middle: l<br>Middle: rl</div>
+</div>
+
+<!-- 4 -->
+<div class="program">
+  <h2>4. Count all the words in a string</h2>
+  <pre>
+public class WordCount {
+  static int countWords(String str) {
+    String[] words = str.trim().split("\\s+");
+    return words.length;
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Word count: " + countWords("Java is powerful"));
+  }
+}
+  </pre>
+  <div class="output">Output: Word count: 3</div>
+</div>
+
+<!-- 5 -->
+<div class="program">
+  <h2>5. Compute future investment value</h2>
+  <pre>
+public class InvestmentValue {
+  static double futureValue(double amount, double rate, int years) {
+    return amount * Math.pow(1 + rate / 100, years);
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Future Value: " + futureValue(10000, 5, 10));
+  }
+}
+  </pre>
+  <div class="output">Output: Future Value: 16288.95</div>
+</div>
+
+<!-- 6 -->
+<div class="program">
+  <h2>6. Print characters between two characters (A to P)</h2>
+  <pre>
+public class CharRange {
+  static void printChars(char start, char end) {
+    for (char c = start; c <= end; c++) {
+      System.out.print(c + " ");
+    }
+  }
+
+  public static void main(String[] args) {
+    printChars('A', 'P');
+  }
+}
+  </pre>
+  <div class="output">Output: A B C D E F G H I J K L M N O P</div>
+</div>
+
+<!-- 7 -->
+<div class="program">
+  <h2>7. Check whether a string is a valid password</h2>
+  <pre>
+public class PasswordValidator {
+  static boolean isValid(String password) {
+    return password.length() >= 8 &&
+           password.matches(".*[A-Z].*") &&
+           password.matches(".*[a-z].*") &&
+           password.matches(".*\\d.*");
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Valid: " + isValid("Java1234"));
+  }
+}
+  </pre>
+  <div class="output">Output: Valid: true</div>
+</div>
+
+<!-- 8 -->
+<div class="program">
+  <h2>8. Display the current date and time</h2>
+  <pre>
+import java.time.LocalDateTime;
+
+public class CurrentDateTime {
+  public static void main(String[] args) {
+    LocalDateTime now = LocalDateTime.now();
+    System.out.println("Current DateTime: " + now);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays current date and time</div>
+</div>
+
+<!-- 9 -->
+<div class="program">
+  <h2>9. Find all twin prime numbers less than 100</h2>
+  <pre>
+public class TwinPrimes {
+  static boolean isPrime(int n) {
+    if (n < 2) return false;
+    for (int i = 2; i <= Math.sqrt(n); i++)
+      if (n % i == 0) return false;
+    return true;
+  }
+
+  public static void main(String[] args) {
+    for (int i = 2; i < 100; i++) {
+      if (isPrime(i) && isPrime(i + 2)) {
+        System.out.println(i + " and " + (i + 2));
+      }
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Lists twin primes like 3 and 5, 5 and 7, etc.</div>
+</div>
+
+<!-- 10 -->
+<div class="program">
+  <h2>10. Count the number of digits equal to 2 in an integer</h2>
+  <pre>
+public class CountTwos {
+  static int countTwoDigits(int num) {
+    int count = 0;
+    while (num > 0) {
+      if (num % 10 == 2) count++;
+      num /= 10;
+    }
+    return count;
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Count of 2s: " + countTwoDigits(22122));
+  }
+}
+  </pre>
+  <div class="output">Output: Count of 2s: 4</div>
+</div>
+
+<!-- 11 -->
+<div class="program">
+  <h2>11. Check whether three integers are consecutive</h2>
+  <pre>
+public class ConsecutiveCheck {
+  static boolean areConsecutive(int a, int b, int c) {
+    int[] arr = {a, b, c};
+    java.util.Arrays.sort(arr);
+    return arr[1] == arr[0] + 1 && arr[2] == arr[1] + 1;
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Consecutive: " + areConsecutive(3, 4, 5));
+  }
+}
+  </pre>
+  <div class="output">Output: Consecutive: true</div>
+</div>
+
+<!-- 12 -->
+<div class="program">
+  <h2>12. Check if one integer is the middle point between the other two</h2>
+  <pre>
+public class MiddlePointCheck {
+  static boolean isMiddle(int a, int b, int c) {
+    int[] arr = {a, b, c};
+    java.util.Arrays.sort(arr);
+    return arr[1] * 2 == arr[0] + arr[2];
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Middle point: " + isMiddle(2, 4, 6));
+  }
+}
+  </pre>
+  <div class="output">Output: Middle point: true</div>
+</div>
+
+<!-- 13 -->
+<div class="program">
+  <h2>13. Check whether all characters in a string are vowels</h2>
+  <pre>
+public class AllVowels {
+  static boolean allVowels(String str) {
+    return str.matches("[aeiouAEIOU]+");
+  }
+
+  public static void main(String[] args) {
+    System.out.println("All vowels: " + allVowels("aeiou"));
+    System.out.println("All vowels: " + allVowels("hello"));
+  }
+}
+  </pre>
+  <div class="output">Output: All vowels: true<br>All vowels: false</div>
+</div>
+
+  </section>
+</body>
+</html>

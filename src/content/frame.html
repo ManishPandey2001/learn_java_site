@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programs Portal</title>
+  <!-- Stylish futuristic font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0b0b0b;
+      color: #b6ffb6; /* light green text */
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      padding: 20px;
+      background-color: #111;
+      border-bottom: 1px solid #1a331a;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar a {
+      color: #b6ffb6; /* light green links */
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #00ff99;
+      text-shadow: 0 0 10px #00ff99;
+    }
+
+    /* Two-column layout */
+    .main {
+      display: flex;
+      height: calc(100vh - 60px);
+    }
+
+    .sidebar {
+      width: 25%;
+      border-right: 1px solid #1a331a;
+      background-color: #111;
+    }
+
+    .content {
+      width: 75%;
+      background-color: #0b0b0b;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="frame.html">Programs</a>
+    <a href="syllabus.html">Syllabus</a>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="main">
+    <div class="sidebar">
+      <iframe src="programs-list.html" name="menuFrame"></iframe>
+    </div>
+    <div class="content">
+      <iframe src="welcome.html" name="contentFrame"></iframe>
+    </div>
+  </div>
+
+</body>
+</html>

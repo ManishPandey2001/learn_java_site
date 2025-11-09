@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Applet Programs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0b0b;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 30px 100px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(11,11,11,0.8);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 400;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff4d4d;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-left: 40px;
+    }
+
+    .login {
+      color: #ff4d4d;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .content {
+      padding: 140px 100px 100px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .program {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    }
+
+    .program h2 {
+      color: #ffb300;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+
+    pre {
+      background: #000;
+      color: #0f0;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .output {
+      background: #1b1b1b;
+      border-radius: 8px;
+      padding: 15px;
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .navbar {
+        padding: 20px 40px;
+      }
+      .content {
+        padding: 120px 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+ 
+
+  <section class="content">
+    <h1>Java Multi Threading Programs</h1>
+
+    <!-- Program Blocks Start -->
+    <!-- Each block below follows your glowing modular format -->
+<!-- 1 -->
+<div class="program">
+  <h2>1. Basic Java thread that prints "Hello, World!"</h2>
+  <pre>
+class HelloThread extends Thread {
+  public void run() {
+    System.out.println("Hello, World!");
+  }
+
+  public static void main(String[] args) {
+    HelloThread t = new HelloThread();
+    t.start();
+  }
+}
+  </pre>
+  <div class="output">Output: Hello, World!</div>
+</div>
+
+<!-- 2 -->
+<div class="program">
+  <h2>2. Two threads to print even and odd numbers from 1 to 20</h2>
+  <pre>
+class EvenThread extends Thread {
+  public void run() {
+    for (int i = 2; i <= 20; i += 2)
+      System.out.println("Even: " + i);
+  }
+}
+
+class OddThread extends Thread {
+  public void run() {
+    for (int i = 1; i <= 19; i += 2)
+      System.out.println("Odd: " + i);
+  }
+}
+
+public class EvenOddThreads {
+  public static void main(String[] args) {
+    new EvenThread().start();
+    new OddThread().start();
+  }
+}
+  </pre>
+  <div class="output">Output: Even and Odd numbers from 1 to 20 (interleaved)</div>
+</div>
+
+<!-- 3 -->
+<div class="program">
+  <h2>3. Sort an array using multiple threads</h2>
+  <pre>
+import java.util.Arrays;
+
+class SortThread extends Thread {
+  int[] arr;
+
+  SortThread(int[] arr) {
+    this.arr = arr;
+  }
+
+  public void run() {
+    Arrays.sort(arr);
+  }
+}
+
+public class MultiThreadSort {
+  public static void main(String[] args) throws InterruptedException {
+    int[] arr1 = {5, 2, 8, 1};
+    int[] arr2 = {9, 3, 7, 4};
+
+    SortThread t1 = new SortThread(arr1);
+    SortThread t2 = new SortThread(arr2);
+
+    t1.start();
+    t2.start();
+    t1.join();
+    t2.join();
+
+    System.out.println("Sorted Array 1: " + Arrays.toString(arr1));
+    System.out.println("Sorted Array 2: " + Arrays.toString(arr2));
+  }
+}
+  </pre>
+  <div class="output">Output: Two sorted arrays</div>
+</div>
+
+<!-- 4 -->
+<div class="program">
+  <h2>4. Matrix multiplication using multiple threads</h2>
+  <pre>
+class MultiplyThread extends Thread {
+  int[][] a, b, result;
+  int row;
+
+  MultiplyThread(int[][] a, int[][] b, int[][] result, int row) {
+    this.a = a;
+    this.b = b;
+    this.result = result;
+    this.row = row;
+  }
+
+  public void run() {
+    for (int j = 0; j < b[0].length; j++) {
+      result[row][j] = 0;
+      for (int k = 0; k < b.length; k++)
+        result[row][j] += a[row][k] * b[k][j];
+    }
+  }
+}
+
+public class MatrixMultiThread {
+  public static void main(String[] args) throws InterruptedException {
+    int[][] a = {{1, 2}, {3, 4}};
+    int[][] b = {{2, 0}, {1, 2}};
+    int[][] result = new int[2][2];
+
+    MultiplyThread[] threads = new MultiplyThread[2];
+    for (int i = 0; i < 2; i++) {
+      threads[i] = new MultiplyThread(a, b, result, i);
+      threads[i].start();
+    }
+
+    for (MultiplyThread t : threads)
+      t.join();
+
+    for (int[] row : result) {
+      for (int val : row)
+        System.out.print(val + " ");
+      System.out.println();
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Matrix product</div>
+</div>
+
+<!-- 5 -->
+<div class="program">
+  <h2>5. Sum of all prime numbers up to a limit using threads</h2>
+  <pre>
+class PrimeSumThread extends Thread {
+  int start, end, sum = 0;
+
+  PrimeSumThread(int start, int end) {
+    this.start = start;
+    this.end = end;
+  }
+
+  boolean isPrime(int n) {
+    if (n < 2) return false;
+    for (int i = 2; i <= Math.sqrt(n); i++)
+      if (n % i == 0) return false;
+    return true;
+  }
+
+  public void run() {
+    for (int i = start; i <= end; i++)
+      if (isPrime(i)) sum += i;
+  }
+}
+
+public class PrimeSumMultiThread {
+  public static void main(String[] args) throws InterruptedException {
+    PrimeSumThread t1 = new PrimeSumThread(1, 50);
+    PrimeSumThread t2 = new PrimeSumThread(51, 100);
+
+    t1.start();
+    t2.start();
+    t1.join();
+    t2.join();
+
+    int total = t1.sum + t2.sum;
+    System.out.println("Total Prime Sum: " + total);
+  }
+}
+  </pre>
+  <div class="output">Output: Sum of primes from 1 to 100</div>
+</div>
+
+<!-- 6 -->
+<div class="program">
+  <h2>6. Concurrent web crawler using threads</h2>
+  <pre>
+class WebCrawler extends Thread {
+  String url;
+
+  WebCrawler(String url) {
+    this.url = url;
+  }
+
+  public void run() {
+    System.out.println("Crawling: " + url);
+    // Simulate crawling
+    try { Thread.sleep(1000); } catch (Exception e) {}
+    System.out.println("Finished: " + url);
+  }
+}
+
+public class ConcurrentCrawler {
+  public static void main(String[] args) {
+    String[] urls = {"https://site1.com", "https://site2.com", "https://site3.com"};
+    for (String url : urls)
+      new WebCrawler(url).start();
+  }
+}
+  </pre>
+  <div class="output">Output: Crawling multiple sites concurrently</div>
+</div>
+
+<!-- 7 -->
+<div class="program">
+  <h2>7. Bank account with concurrent deposits and withdrawals</h2>
+  <pre>
+class Bank {
+  int balance = 1000;
+
+  synchronized void deposit(int amount) {
+    balance += amount;
+    System.out.println("Deposited: " + amount + ", Balance: " + balance);
+  }
+
+  synchronized void withdraw(int amount) {
+    if (balance >= amount) {
+      balance -= amount;
+      System.out.println("Withdrawn: " + amount + ", Balance: " + balance);
+    } else {
+      System.out.println("Insufficient balance");
+    }
+  }
+}
+
+public class BankThread {
+  public static void main(String[] args) {
+    Bank bank = new Bank();
+
+    Thread t1 = new Thread(() -> bank.deposit(500));
+    Thread t2 = new Thread(() -> bank.withdraw(700));
+    Thread t3 = new Thread(() -> bank.withdraw(900));
+
+    t1.start(); t2.start(); t3.start();
+  }
+}
+  </pre>
+  <div class="output">Output: Concurrent deposit and withdrawal operations</div>
+</div>
+
+<!-- 8 -->
+<div class="program">
+  <h2>8. Multiple threads using Runnable interface</h2>
+  <pre>
+class MyRunnable implements Runnable {
+  public void run() {
+    System.out.println("Thread running using Runnable");
+  }
+}
+
+public class RunnableExample {
+  public static void main(String[] args) {
+    Thread t1 = new Thread(new MyRunnable());
+    Thread t2 = new Thread(new MyRunnable());
+    t1.start();
+    t2.start();
+  }
+}
+  </pre>
+  <div class="output">Output: Runnable threads executing</div>
+</div>
+
+<!-- 9 -->
+<div class="program">
+  <h2>9. Multiple threads using Thread class</h2>
+  <pre>
+class MyThread extends Thread {
+  public void run() {
+    System.out.println("Thread running using Thread class");
+  }
+}
+
+public class ThreadExample {
+  public static void main(String[] args) {
+    new MyThread().start();
+    new MyThread().start();
+  }
+}
+  </pre>
+  <div class="output">Output: Threads executing via Thread class</div>
+</div>
+
+<!-- 10 -->
+<div class="program">
+  <h2>10. Create multiple threads, set their name and priority</h2>
+  <pre>
+class NamedPriorityThread extends Thread {
+  public void run() {
+    System.out.println("Thread Name: " + getName() + ", Priority: " + getPriority());
+  }
+}
+
+public class ThreadNamingPriority {
+  public static void main(String[] args) {
+    NamedPriorityThread t1 = new NamedPriorityThread();
+    NamedPriorityThread t2 = new NamedPriorityThread();
+
+    t1.setName("Thread-One");
+    t2.setName("Thread-Two");
+
+    t1.setPriority(Thread.MIN_PRIORITY);
+    t2.setPriority(Thread.MAX_PRIORITY);
+
+    t1.start();
+    t2.start();
+  }
+}
+  </pre>
+  <div class="output">Output: Displays thread names and priorities</div>
+</div>
+
+<!-- 11 -->
+<div class="program">
+  <h2>11. Example of synchronization keyword</h2>
+  <pre>
+class Counter {
+  int count = 0;
+
+  synchronized void increment() {
+    count++;
+  }
+}
+
+public class SyncExample {
+  public static void main(String[] args) throws InterruptedException {
+    Counter counter = new Counter();
+
+    Thread t1 = new Thread(() -> {
+      for (int i = 0; i < 1000; i++) counter.increment();
+    });
+
+    Thread t2 = new Thread(() -> {
+      for (int i = 0; i < 1000; i++) counter.increment();
+    });
+
+    t1.start();
+    t2.start();
+    t1.join();
+    t2.join();
+
+    System.out.println("Final Count: " + counter.count);
+  }
+}
+  </pre>
+  <div class="output">Output: Final Count: 2000</div>
+</div>
+
+<!-- 12 -->
+<div class="program">
+  <h2>12. Example of notify, notifyAll, wait, sleep methods</h2>
+  <pre>
+class SharedResource {
+  synchronized void waitMethod() {
+    try {
+      System.out.println("Waiting...");
+      wait();
+      System.out.println("Resumed");
+    } catch (InterruptedException e) {}
+  }
+
+  synchronized void notifyMethod() {
+    System.out.println("Notifying...");
+    notify();
+  }
+}
+
+public class WaitNotifyExample {
+  public static void main(String[] args) {
+    SharedResource resource = new SharedResource();
+
+    Thread t1 = new Thread(() -> resource.waitMethod());
+    Thread t2 = new Thread(() -> {
+      try { Thread.sleep(1000); } catch (Exception e) {}
+      resource.notifyMethod();
+    });
+
+    t1.start();
+    t2.start();
+  }
+}
+  </pre>
+  <div class="output">Output: Demonstrates wait and notify behavior</div>
+</div>
+
+<!-- 13 -->
+<div class="program">
+  <h2>13. Example of join and yield methods</h2>
+  <pre>
+class JoinYieldThread extends Thread {
+  public void run() {
+    for (int i = 1; i <= 3; i++) {
+      System.out.println(getName() + " - Count: " + i);
+      Thread.yield();
+    }
+  }
+}
+
+public class JoinYieldExample {
+  public static void main(String[] args) throws InterruptedException {
+    JoinYieldThread t1 = new JoinYieldThread();
+    JoinYieldThread t2 = new JoinYieldThread();
+
+    t1.setName("Thread-A");
+    t2.setName("Thread-B");
+
+    t1.start();
+    t1.join(); // Wait for t1 to finish
+
+    t2.start();
+  }
+}
+  </pre>
+  <div class="output">Output: Thread-A completes before Thread-B starts</div>
+</div>
+
+  </section>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Programming Syllabus - BCA-16-503</title>
+
+  <!-- Stylish futuristic Orbitron font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0b0b0b;
+      color: #b6ffb6; /* light green text */
+      line-height: 1.8;
+      padding: 100px 100px 60px;
+    }
+
+    /* ===== Navbar ===== */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      padding: 20px;
+      background-color: #111;
+      border-bottom: 1px solid #1a331a;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+    }
+
+    .navbar a {
+      color: #b6ffb6;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #00ff99;
+      text-shadow: 0 0 10px #00ff99;
+    }
+
+    /* ===== Page Content ===== */
+    h1, h2, h3 {
+      color: #00ff99;
+      margin-bottom: 15px;
+      text-shadow: 0 0 8px #00ff99;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 40px;
+      border-bottom: 2px solid #00ff99;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #ccffcc; /* slightly softer green for readability */
+    }
+
+    ul {
+      margin-left: 25px;
+      list-style: none;
+    }
+
+    ul li::before {
+      content: "• ";
+      color: #00ff99;
+      text-shadow: 0 0 6px #00ff99;
+    }
+
+    .references li {
+      list-style: none;
+      color: #b6ffb6;
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #111;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #00ff99;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 900px) {
+      body {
+        padding: 100px 25px 40px;
+      }
+
+      .navbar {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="frame.html">Programs</a>
+    <a href="syllabus.html">Syllabus</a>
+  </div>
+
+  <!-- ===== Syllabus Content ===== -->
+  <h1>Java Programming (BCA-16-503)</h1>
+
+  <h2>UNIT I</h2>
+  <p><strong>Java and the Internet:</strong> The Java programming language and its characteristics; Java development kit, Java run-time environment; Java compiler.</p>
+  <p><strong>Fundamentals of Java:</strong> Java Vs. C++, Byte Code, Java Virtual Machine, constants, variables, data types, operators, expressions, control structures, defining class, creating objects, accessing class members, constructors, Garbage Collection, method overloading.</p>
+  <p><strong>Inheritance:</strong> Different types of Inheritance, member access issues, using super keyword to call superclass constructors, creating a multilevel hierarchy, method overriding, dynamic method dispatch, using abstract classes, using Final keyword.</p>
+
+  <h2>UNIT II</h2>
+  <p><strong>I/O Basics:</strong> Streams, the predefined streams; Reading console input, writing console output.</p>
+  <p><strong>Arrays and Strings:</strong> One-dimensional and two-dimensional arrays, String handling using String and StringBuffer class, String functions.</p>
+  <p><strong>Packages:</strong> Types of packages, defining a package, importing packages, access protection.</p>
+  <p><strong>Interfaces:</strong> Defining an interface, implementing interfaces, variables in interfaces, achieving multiple inheritance using interfaces, interface and abstract classes.</p>
+
+  <h2>UNIT III</h2>
+  <p><strong>Exception Handling:</strong> Java Exception handling model, types of exceptions, using Try and Catch, multiple Try and Catch clauses, nested Try statements, finally block, user-defined exceptions.</p>
+  <p><strong>Multithreaded Programming:</strong> The Java Thread model, the Thread class and Runnable interface, creating a thread using Runnable interface and extending Thread, creating multiple threads, thread priorities, synchronization: methods, statements, inter-thread communication, deadlock, suspending, resuming and stopping threads.</p>
+  <p><strong>Applet Programming:</strong> Introduction, types of applets, life cycle, incorporating an applet into web page using Applet Tag, running applets, using Graphics class and its methods to draw lines, rectangles, circles, ellipses, arcs and polygons.</p>
+
+  <h2>UNIT IV</h2>
+  <p><strong>Using AWT Controls:</strong> Introduction to AWT, creating GUI applications using AWT, AWT controls: Label, TextBox, TextArea, Check Boxes, Radio Buttons, Choice lists; understanding layout managers: FlowLayout, BorderLayout, GridLayout; introduction to event handling using Delegation Event Model.</p>
+  <p><strong>Introduction to Java Database Connectivity (JDBC):</strong> JDBC Architecture, JDBC Drivers, Java.SQL package, connecting to the database and performing basic database operations like Insert, Delete, Update and Select.</p>
+
+  <h2>References</h2>
+  <ul class="references">
+    <li>1. Balaguruswamy, E. — <em>Programming with Java: A Primer</em>, TMH, New Delhi, Latest reprint.</li>
+    <li>2. Bayross, Ivan — <em>Java 2</em> by BPB Publication.</li>
+    <li>3. Schildt, Herbert — <em>The Complete Reference Java 2</em>, TMH.</li>
+    <li>4. Arora, Indu — <em>JAVA Programming</em>.</li>
+  </ul>
+
+</body>
+</html>

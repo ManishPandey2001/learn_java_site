@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Applet Programs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0b0b;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 30px 100px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(11,11,11,0.8);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 400;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff4d4d;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-left: 40px;
+    }
+
+    .login {
+      color: #ff4d4d;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .content {
+      padding: 140px 100px 100px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .program {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    }
+
+    .program h2 {
+      color: #ffb300;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+
+    pre {
+      background: #000;
+      color: #0f0;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .output {
+      background: #1b1b1b;
+      border-radius: 8px;
+      padding: 15px;
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .navbar {
+        padding: 20px 40px;
+      }
+      .content {
+        padding: 120px 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+
+  <section class="content">
+    <h1>Java OOPS Programs</h1>
+
+    <!-- Program Blocks Start -->
+    <!-- Each block below follows your glowing modular format -->
+<!-- 1 -->
+<div class="program">
+  <h2>1. Class "Person" with name and age (constructor)</h2>
+  <pre>
+class Person {
+  String name;
+  int age;
+
+  Person(String name, int age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  void display() {
+    System.out.println("Name: " + name + ", Age: " + age);
+  }
+
+  public static void main(String[] args) {
+    Person p1 = new Person("Alice", 25);
+    Person p2 = new Person("Bob", 30);
+    p1.display();
+    p2.display();
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Name: Alice, Age: 25<br>Name: Bob, Age: 30</div>
+</div>
+
+<!-- 2 -->
+<div class="program">
+  <h2>2. Class "Dog" with name and breed (constructor + setters)</h2>
+  <pre>
+class Dog {
+  private String name;
+  private String breed;
+
+  Dog(String name, String breed) {
+    this.name = name;
+    this.breed = breed;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public void setBreed(String breed) {
+    this.breed = breed;
+  }
+
+  public void display() {
+    System.out.println("Name: " + name + ", Breed: " + breed);
+  }
+
+  public static void main(String[] args) {
+    Dog d1 = new Dog("Tommy", "Labrador");
+    Dog d2 = new Dog("Max", "Beagle");
+    d1.setName("Rocky");
+    d2.setBreed("Bulldog");
+    d1.display();
+    d2.display();
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Name: Rocky, Breed: Labrador<br>Name: Max, Breed: Bulldog</div>
+</div>
+
+<!-- 3 -->
+<div class="program">
+  <h2>3. Class "Rectangle" with area and perimeter</h2>
+  <pre>
+class Rectangle {
+  double width, height;
+
+  Rectangle(double width, double height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  double area() {
+    return width * height;
+  }
+
+  double perimeter() {
+    return 2 * (width + height);
+  }
+
+  public static void main(String[] args) {
+    Rectangle r = new Rectangle(5, 3);
+    System.out.println("Area: " + r.area());
+    System.out.println("Perimeter: " + r.perimeter());
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Area: 15.0<br>Perimeter: 16.0</div>
+</div>
+
+<!-- 4 -->
+<div class="program">
+  <h2>4. Class "Circle" with radius, area, and circumference</h2>
+  <pre>
+class Circle {
+  private double radius;
+
+  Circle(double radius) {
+    this.radius = radius;
+  }
+
+  public void setRadius(double radius) {
+    this.radius = radius;
+  }
+
+  public double getRadius() {
+    return radius;
+  }
+
+  public double area() {
+    return Math.PI * radius * radius;
+  }
+
+  public double circumference() {
+    return 2 * Math.PI * radius;
+  }
+
+  public static void main(String[] args) {
+    Circle c = new Circle(4);
+    System.out.println("Area: " + c.area());
+    System.out.println("Circumference: " + c.circumference());
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Area: 50.265<br>Circumference: 25.132</div>
+</div>
+
+<!-- 5 -->
+<div class="program">
+  <h2>5. Class "Book" with collection and add/remove methods</h2>
+  <pre>
+import java.util.ArrayList;
+
+class Book {
+  String title, author, isbn;
+
+  Book(String title, String author, String isbn) {
+    this.title = title;
+    this.author = author;
+    this.isbn = isbn;
+  }
+
+  public String toString() {
+    return title + " by " + author + " (ISBN: " + isbn + ")";
+  }
+}
+
+class Library {
+  ArrayList&lt;Book&gt; books = new ArrayList&lt;&gt;();
+
+  void addBook(Book b) {
+    books.add(b);
+  }
+
+  void removeBook(String isbn) {
+    books.removeIf(b -&gt; b.isbn.equals(isbn));
+  }
+
+  void displayBooks() {
+    for (Book b : books)
+      System.out.println(b);
+  }
+
+  public static void main(String[] args) {
+    Library lib = new Library();
+    lib.addBook(new Book("Java Basics", "John Doe", "123"));
+    lib.addBook(new Book("OOP in Java", "Jane Smith", "456"));
+    lib.displayBooks();
+    lib.removeBook("123");
+    System.out.println("After removal:");
+    lib.displayBooks();
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Java Basics by John Doe (ISBN: 123)<br>OOP in Java by Jane Smith (ISBN: 456)<br>After removal:<br>OOP in Java by Jane Smith (ISBN: 456)</div>
+</div>
+<!-- 6 -->
+<div class="program">
+  <h2>6. Class "Employee" with salary calculation and update</h2>
+  <pre>
+class Employee {
+  String name, jobTitle;
+  double salary;
+
+  Employee(String name, String jobTitle, double salary) {
+    this.name = name;
+    this.jobTitle = jobTitle;
+    this.salary = salary;
+  }
+
+  void updateSalary(double increment) {
+    salary += increment;
+  }
+
+  void display() {
+    System.out.println(name + " - " + jobTitle + " - Salary: " + salary);
+  }
+
+  public static void main(String[] args) {
+    Employee e = new Employee("John", "Developer", 50000);
+    e.updateSalary(5000);
+    e.display();
+  }
+}
+  </pre>
+  <div class="output">Output: John - Developer - Salary: 55000.0</div>
+</div>
+
+<!-- 7 -->
+<div class="program">
+  <h2>7. Class "Bank" with accounts and operations</h2>
+  <pre>
+import java.util.ArrayList;
+
+class Account {
+  String name;
+  double balance;
+
+  Account(String name, double balance) {
+    this.name = name;
+    this.balance = balance;
+  }
+
+  void deposit(double amount) {
+    balance += amount;
+  }
+
+  void withdraw(double amount) {
+    if (balance >= amount) balance -= amount;
+  }
+
+  public String toString() {
+    return name + " - Balance: " + balance;
+  }
+}
+
+class Bank {
+  ArrayList&lt;Account&gt; accounts = new ArrayList&lt;&gt;();
+
+  void addAccount(Account a) {
+    accounts.add(a);
+  }
+
+  void removeAccount(String name) {
+    accounts.removeIf(a -&gt; a.name.equals(name));
+  }
+
+  void displayAccounts() {
+    for (Account a : accounts)
+      System.out.println(a);
+  }
+
+  public static void main(String[] args) {
+    Bank bank = new Bank();
+    Account a1 = new Account("Alice", 1000);
+    Account a2 = new Account("Bob", 2000);
+    bank.addAccount(a1);
+    bank.addAccount(a2);
+    a1.deposit(500);
+    a2.withdraw(300);
+    bank.displayAccounts();
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Alice - Balance: 1500.0<br>Bob - Balance: 1700.0</div>
+</div>
+
+<!-- 8 -->
+<div class="program">
+  <h2>8. Class "TrafficLight" with color and duration</h2>
+  <pre>
+class TrafficLight {
+  String color;
+  int duration;
+
+  TrafficLight(String color, int duration) {
+    this.color = color;
+    this.duration = duration;
+  }
+
+  void changeColor(String newColor) {
+    color = newColor;
+  }
+
+  boolean isRed() {
+    return color.equalsIgnoreCase("Red");
+  }
+
+  boolean isGreen() {
+    return color.equalsIgnoreCase("Green");
+  }
+
+  public static void main(String[] args) {
+    TrafficLight t = new TrafficLight("Red", 30);
+    System.out.println("Is Red? " + t.isRed());
+    t.changeColor("Green");
+    System.out.println("Is Green? " + t.isGreen());
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Is Red? true<br>Is Green? true</div>
+</div>
+
+<!-- 9 -->
+<div class="program">
+  <h2>9. Class "Employee" with hire date and years of service</h2>
+  <pre>
+import java.time.LocalDate;
+import java.time.Period;
+
+class Employee {
+  String name;
+  double salary;
+  LocalDate hireDate;
+
+  Employee(String name, double salary, LocalDate hireDate) {
+    this.name = name;
+    this.salary = salary;
+    this.hireDate = hireDate;
+  }
+
+  int yearsOfService() {
+    return Period.between(hireDate, LocalDate.now()).getYears();
+  }
+
+  public static void main(String[] args) {
+    Employee e = new Employee("John", 50000, LocalDate.of(2018, 1, 1));
+    System.out.println("Years of Service: " + e.yearsOfService());
+  }
+}
+  </pre>
+  <div class="output">Output: Years of Service: 7</div>
+</div>
+
+<!-- 10 -->
+<div class="program">
+  <h2>10. Class "Student" with courses and add/remove methods</h2>
+  <pre>
+import java.util.ArrayList;
+
+class Student {
+  String name;
+  String grade;
+  ArrayList&lt;String&gt; courses = new ArrayList&lt;&gt;();
+
+  Student(String name, String grade) {
+    this.name = name;
+    this.grade = grade;
+  }
+
+  void addCourse(String course) {
+    courses.add(course);
+  }
+
+  void removeCourse(String course) {
+    courses.remove(course);
+  }
+
+  void displayCourses() {
+    System.out.println(name + "'s Courses: " + courses);
+  }
+
+  public static void main(String[] args) {
+    Student s = new Student("Alice", "A");
+    s.addCourse("Math");
+    s.addCourse("Science");
+    s.removeCourse("Math");
+    s.displayCourses();
+  }
+}
+  </pre>
+  <div class="output">Output: Alice's Courses: [Science]</div>
+</div>
+<!-- 11 -->
+<div class="program">
+  <h2>11. Class "Library" with collection of books</h2>
+  <pre>
+import java.util.ArrayList;
+
+class Book {
+  String title;
+
+  Book(String title) {
+    this.title = title;
+  }
+
+  public String toString() {
+    return title;
+  }
+}
+
+class Library {
+  ArrayList&lt;Book&gt; books = new ArrayList&lt;&gt;();
+
+  void addBook(Book b) {
+    books.add(b);
+  }
+
+  void removeBook(String title) {
+    books.removeIf(b -&gt; b.title.equals(title));
+  }
+
+  void displayBooks() {
+    for (Book b : books)
+      System.out.println(b);
+  }
+
+  public static void main(String[] args) {
+    Library lib = new Library();
+    lib.addBook(new Book("Java"));
+    lib.addBook(new Book("Python"));
+    lib.displayBooks();
+    lib.removeBook("Java");
+    System.out.println("After removal:");
+    lib.displayBooks();
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Java<br>Python<br>After removal:<br>Python</div>
+</div>
+
+<!-- 12 -->
+<div class="program">
+  <h2>12. Class "Airplane" with flight status and delay</h2>
+  <pre>
+class Airplane {
+  String flightNumber, destination;
+  String departureTime;
+  boolean delayed;
+
+  Airplane(String flightNumber, String destination, String departureTime) {
+    this.flightNumber = flightNumber;
+    this.destination = destination;
+    this.departureTime = departureTime;
+    this.delayed = false;
+  }
+
+  void delayFlight() {
+    delayed = true;
+  }
+
+  void checkStatus() {
+    System.out.println("Flight " + flightNumber + " to " + destination +
+      " is " + (delayed ? "Delayed" : "On Time"));
+  }
+
+  public static void main(String[] args) {
+    Airplane a = new Airplane("AI101", "Delhi", "10:00 AM");
+    a.checkStatus();
+    a.delayFlight();
+    a.checkStatus();
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Flight AI101 to Delhi is On Time<br>Flight AI101 to Delhi is Delayed</div>
+</div>
+
+<!-- 13 -->
+<div class="program">
+  <h2>13. Class "Inventory" with product collection and low stock check</h2>
+  <pre>
+import java.util.HashMap;
+
+class Inventory {
+  HashMap&lt;String, Integer&gt; products = new HashMap&lt;&gt;();
+
+  void addProduct(String name, int quantity) {
+    products.put(name, quantity);
+  }
+
+  void removeProduct(String name) {
+    products.remove(name);
+  }
+
+  void checkLowInventory(int threshold) {
+    for (String name : products.keySet()) {
+      if (products.get(name) &lt;= threshold)
+        System.out.println(name + " is low in stock");
+    }
+  }
+
+  public static void main(String[] args) {
+    Inventory inv = new Inventory();
+    inv.addProduct("Pen", 5);
+    inv.addProduct("Notebook", 2);
+    inv.checkLowInventory(3);
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Notebook is low in stock</div>
+</div>
+
+<!-- 14 -->
+<div class="program">
+  <h2>14. Class "School" with students, teachers, and classes</h2>
+  <pre>
+import java.util.ArrayList;
+
+class School {
+  ArrayList&lt;String&gt; students = new ArrayList&lt;&gt;();
+  ArrayList&lt;String&gt; teachers = new ArrayList&lt;&gt;();
+  ArrayList&lt;String&gt; classes = new ArrayList&lt;&gt;();
+
+  void addStudent(String name) {
+    students.add(name);
+  }
+
+  void removeStudent(String name) {
+    students.remove(name);
+  }
+
+  void addTeacher(String name) {
+    teachers.add(name);
+  }
+
+  void removeTeacher(String name) {
+    teachers.remove(name);
+  }
+
+  void createClass(String className) {
+    classes.add(className);
+  }
+
+  void display() {
+    System.out.println("Students: " + students);
+    System.out.println("Teachers: " + teachers);
+    System.out.println("Classes: " + classes);
+  }
+
+  public static void main(String[] args) {
+    School s = new School();
+    s.addStudent("Amit");
+    s.addTeacher("Mrs. Sharma");
+    s.createClass("Math");
+    s.display();
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Students: [Amit]<br>Teachers: [Mrs. Sharma]<br>Classes: [Math]</div>
+</div>
+
+<!-- 15 -->
+<div class="program">
+  <h2>15. Class "MusicLibrary" with songs and random play</h2>
+  <pre>
+import java.util.ArrayList;
+import java.util.Random;
+
+class MusicLibrary {
+  ArrayList&lt;String&gt; songs = new ArrayList&lt;&gt;();
+
+  void addSong(String song) {
+    songs.add(song);
+  }
+
+  void removeSong(String song) {
+    songs.remove(song);
+  }
+
+  void playRandomSong() {
+    if (songs.isEmpty()) {
+      System.out.println("No songs available");
+      return;
+    }
+    Random rand = new Random();
+    int index = rand.nextInt(songs.size());
+    System.out.println("Playing: " + songs.get(index));
+  }
+
+  public static void main(String[] args) {
+    MusicLibrary lib = new MusicLibrary();
+    lib.addSong("Song A");
+    lib.addSong("Song B");
+    lib.playRandomSong();
+  }
+}
+  </pre>
+  <div class="output">Output: Playing: Song A or Song B</div>
+</div>
+<!-- 16 -->
+<div class="program">
+  <h2>16. Abstract class "Shape" with subclasses for Rectangle, Circle, Triangle</h2>
+  <pre>
+abstract class Shape {
+  abstract double area();
+  abstract double perimeter();
+}
+
+class Rectangle extends Shape {
+  double width, height;
+
+  Rectangle(double w, double h) {
+    width = w;
+    height = h;
+  }
+
+  double area() {
+    return width * height;
+  }
+
+  double perimeter() {
+    return 2 * (width + height);
+  }
+}
+
+class Circle extends Shape {
+  double radius;
+
+  Circle(double r) {
+    radius = r;
+  }
+
+  double area() {
+    return Math.PI * radius * radius;
+  }
+
+  double perimeter() {
+    return 2 * Math.PI * radius;
+  }
+}
+
+class Triangle extends Shape {
+  double a, b, c;
+
+  Triangle(double a, double b, double c) {
+    this.a = a; this.b = b; this.c = c;
+  }
+
+  double area() {
+    double s = (a + b + c) / 2;
+    return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+  }
+
+  double perimeter() {
+    return a + b + c;
+  }
+}
+
+public class ShapeTest {
+  public static void main(String[] args) {
+    Shape s1 = new Rectangle(4, 5);
+    Shape s2 = new Circle(3);
+    Shape s3 = new Triangle(3, 4, 5);
+
+    System.out.println("Rectangle Area: " + s1.area());
+    System.out.println("Circle Area: " + s2.area());
+    System.out.println("Triangle Area: " + s3.area());
+  }
+}
+  </pre>
+  <div class="output">Output: Areas of Rectangle, Circle, Triangle</div>
+</div>
+
+<!-- 17 -->
+<div class="program">
+  <h2>17. Class "Movie" with reviews</h2>
+  <pre>
+import java.util.ArrayList;
+
+class Movie {
+  String title, director;
+  ArrayList&lt;String&gt; actors = new ArrayList&lt;&gt;();
+  ArrayList&lt;String&gt; reviews = new ArrayList&lt;&gt;();
+
+  Movie(String title, String director) {
+    this.title = title;
+    this.director = director;
+  }
+
+  void addActor(String actor) {
+    actors.add(actor);
+  }
+
+  void addReview(String review) {
+    reviews.add(review);
+  }
+
+  void showReviews() {
+    System.out.println("Reviews for " + title + ": " + reviews);
+  }
+
+  public static void main(String[] args) {
+    Movie m = new Movie("Inception", "Christopher Nolan");
+    m.addActor("Leonardo DiCaprio");
+    m.addReview("Mind-blowing!");
+    m.addReview("Excellent visuals.");
+    m.showReviews();
+  }
+}
+  </pre>
+  <div class="output">Output: Reviews for Inception: [Mind-blowing!, Excellent visuals.]</div>
+</div>
+
+<!-- 18 -->
+<div class="program">
+  <h2>18. Class "Restaurant" with menu, prices, and ratings</h2>
+  <pre>
+import java.util.HashMap;
+import java.util.ArrayList;
+
+class Restaurant {
+  HashMap&lt;String, Double&gt; menu = new HashMap&lt;&gt;();
+  ArrayList&lt;Integer&gt; ratings = new ArrayList&lt;&gt;();
+
+  void addItem(String item, double price) {
+    menu.put(item, price);
+  }
+
+  void removeItem(String item) {
+    menu.remove(item);
+  }
+
+  void addRating(int rating) {
+    ratings.add(rating);
+  }
+
+  double averageRating() {
+    int sum = 0;
+    for (int r : ratings) sum += r;
+    return ratings.isEmpty() ? 0 : (double) sum / ratings.size();
+  }
+
+  public static void main(String[] args) {
+    Restaurant r = new Restaurant();
+    r.addItem("Pizza", 250);
+    r.addItem("Burger", 150);
+    r.addRating(4);
+    r.addRating(5);
+    System.out.println("Average Rating: " + r.averageRating());
+  }
+}
+  </pre>
+  <div class="output">Output: Average Rating: 4.5</div>
+</div>
+
+<!-- 19 -->
+<div class="program">
+  <h2>19. Class with methods to search and book flights/hotels</h2>
+  <pre>
+class TravelService {
+  void searchFlights(String from, String to) {
+    System.out.println("Searching flights from " + from + " to " + to);
+  }
+
+  void searchHotels(String location) {
+    System.out.println("Searching hotels in " + location);
+  }
+
+  void bookReservation(String type, String name) {
+    System.out.println(type + " reservation booked for " + name);
+  }
+
+  void cancelReservation(String type, String name) {
+    System.out.println(type + " reservation cancelled for " + name);
+  }
+
+  public static void main(String[] args) {
+    TravelService ts = new TravelService();
+    ts.searchFlights("Delhi", "Mumbai");
+    ts.searchHotels("Mumbai");
+    ts.bookReservation("Flight", "John");
+    ts.cancelReservation("Hotel", "John");
+  }
+}
+  </pre>
+  <div class="output">Output: Flight and hotel operations executed</div>
+</div>
+
+<!-- 20 -->
+<div class="program">
+  <h2>20. Class showing default constructor</h2>
+  <pre>
+class DefaultConstructorExample {
+  String message;
+
+  DefaultConstructorExample() {
+    message = "Default constructor called";
+  }
+
+  void display() {
+    System.out.println(message);
+  }
+
+  public static void main(String[] args) {
+    DefaultConstructorExample obj = new DefaultConstructorExample();
+    obj.display();
+  }
+}
+  </pre>
+  <div class="output">Output: Default constructor called</div>
+</div>
+<!-- 21 -->
+<div class="program">
+  <h2>21. Class showing parameterized constructor</h2>
+  <pre>
+class ParameterizedConstructor {
+  String message;
+
+  ParameterizedConstructor(String msg) {
+    message = msg;
+  }
+
+  void display() {
+    System.out.println("Message: " + message);
+  }
+
+  public static void main(String[] args) {
+    ParameterizedConstructor obj = new ParameterizedConstructor("Hello from constructor!");
+    obj.display();
+  }
+}
+  </pre>
+  <div class="output">Output: Message: Hello from constructor!</div>
+</div>
+
+<!-- 22 -->
+<div class="program">
+  <h2>22. Class showing copy constructor</h2>
+  <pre>
+class CopyConstructor {
+  String data;
+
+  CopyConstructor(String data) {
+    this.data = data;
+  }
+
+  CopyConstructor(CopyConstructor original) {
+    this.data = original.data;
+  }
+
+  void display() {
+    System.out.println("Data: " + data);
+  }
+
+  public static void main(String[] args) {
+    CopyConstructor obj1 = new CopyConstructor("Original");
+    CopyConstructor obj2 = new CopyConstructor(obj1);
+    obj2.display();
+  }
+}
+  </pre>
+  <div class="output">Output: Data: Original</div>
+</div>
+
+<!-- 23 -->
+<div class="program">
+  <h2>23. Class with auto-generated roll numbers for 10 students</h2>
+  <pre>
+class Student {
+  static int counter = 1;
+  int rollNo;
+  String name;
+  String className;
+
+  Student(String name, String className) {
+    this.rollNo = counter++;
+    this.name = name;
+    this.className = className;
+  }
+
+  void display() {
+    System.out.println("Roll No: " + rollNo + ", Name: " + name + ", Class: " + className);
+  }
+
+  public static void main(String[] args) {
+    Student[] students = new Student[10];
+    for (int i = 0; i < 10; i++) {
+      students[i] = new Student("Student" + (i + 1), "BCA");
+      students[i].display();
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Roll No: 1 to 10 with names and class</div>
+</div>
+
+<!-- 24 -->
+<div class="program">
+  <h2>24. Method overloading to calculate area of circle and rectangle</h2>
+  <pre>
+class AreaCalculator {
+  void area(double radius) {
+    System.out.println("Area of Circle: " + (Math.PI * radius * radius));
+  }
+
+  void area(double length, double width) {
+    System.out.println("Area of Rectangle: " + (length * width));
+  }
+
+  public static void main(String[] args) {
+    AreaCalculator calc = new AreaCalculator();
+    calc.area(5);           // Circle
+    calc.area(4, 6);        // Rectangle
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Area of Circle: 78.54<br>Area of Rectangle: 24.0</div>
+</div>
+
+<!-- 25 -->
+<div class="program">
+  <h2>25. Class using command line arguments</h2>
+  <pre>
+public class CommandLineArgs {
+  public static void main(String[] args) {
+    System.out.println("Command Line Arguments:");
+    for (String arg : args) {
+      System.out.println(arg);
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Displays all arguments passed via command line</div>
+</div>
+<!-- 26 -->
+<div class="program">
+  <h2>26. Class "Person" with private variables and public getters/setters</h2>
+  <pre>
+class Person {
+  private String name;
+  private int age;
+  private String country;
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public int getAge() {
+    return age;
+  }
+
+  public void setAge(int age) {
+    this.age = age;
+  }
+
+  public String getCountry() {
+    return country;
+  }
+
+  public void setCountry(String country) {
+    this.country = country;
+  }
+
+  public static void main(String[] args) {
+    Person p = new Person();
+    p.setName("Alice");
+    p.setAge(25);
+    p.setCountry("India");
+    System.out.println(p.getName() + ", " + p.getAge() + ", " + p.getCountry());
+  }
+}
+  </pre>
+  <div class="output">Output: Alice, 25, India</div>
+</div>
+
+<!-- 27 -->
+<div class="program">
+  <h2>27. Class "BankAccount" with private variables and public getters/setters</h2>
+  <pre>
+class BankAccount {
+  private String accountNumber;
+  private double balance;
+
+  public String getAccountNumber() {
+    return accountNumber;
+  }
+
+  public void setAccountNumber(String accountNumber) {
+    this.accountNumber = accountNumber;
+  }
+
+  public double getBalance() {
+    return balance;
+  }
+
+  public void setBalance(double balance) {
+    this.balance = balance;
+  }
+
+  public static void main(String[] args) {
+    BankAccount acc = new BankAccount();
+    acc.setAccountNumber("123456");
+    acc.setBalance(5000.75);
+    System.out.println("Account: " + acc.getAccountNumber() + ", Balance: " + acc.getBalance());
+  }
+}
+  </pre>
+  <div class="output">Output: Account: 123456, Balance: 5000.75</div>
+</div>
+
+<!-- 28 -->
+<div class="program">
+  <h2>28. Class "Rectangle" with private variables and public getters/setters</h2>
+  <pre>
+class Rectangle {
+  private double length;
+  private double width;
+
+  public double getLength() {
+    return length;
+  }
+
+  public void setLength(double length) {
+    this.length = length;
+  }
+
+  public double getWidth() {
+    return width;
+  }
+
+  public void setWidth(double width) {
+    this.width = width;
+  }
+
+  public static void main(String[] args) {
+    Rectangle r = new Rectangle();
+    r.setLength(5);
+    r.setWidth(3);
+    System.out.println("Length: " + r.getLength() + ", Width: " + r.getWidth());
+  }
+}
+  </pre>
+  <div class="output">Output: Length: 5.0, Width: 3.0</div>
+</div>
+
+<!-- 29 -->
+<div class="program">
+  <h2>29. Class "Employee" with formatted salary getter</h2>
+  <pre>
+class Employee {
+  private int employee_id;
+  private String employee_name;
+  private double employee_salary;
+
+  public int getEmployeeId() {
+    return employee_id;
+  }
+
+  public void setEmployeeId(int employee_id) {
+    this.employee_id = employee_id;
+  }
+
+  public String getEmployeeName() {
+    return employee_name;
+  }
+
+  public void setEmployeeName(String employee_name) {
+    this.employee_name = employee_name;
+  }
+
+  public String getFormattedSalary() {
+    return "₹" + String.format("%.2f", employee_salary);
+  }
+
+  public void setEmployeeSalary(double employee_salary) {
+    this.employee_salary = employee_salary;
+  }
+
+  public static void main(String[] args) {
+    Employee e = new Employee();
+    e.setEmployeeId(101);
+    e.setEmployeeName("Rahul");
+    e.setEmployeeSalary(75000.5);
+    System.out.println("ID: " + e.getEmployeeId() + ", Name: " + e.getEmployeeName() + ", Salary: " + e.getFormattedSalary());
+  }
+}
+  </pre>
+  <div class="output">Output: ID: 101, Name: Rahul, Salary: ₹75000.50</div>
+</div>
+
+<!-- 30 -->
+<div class="program">
+  <h2>30. Class "Circle" with radius and methods to calculate area and perimeter</h2>
+  <pre>
+class Circle {
+  private double radius;
+
+  public double getRadius() {
+    return radius;
+  }
+
+  public void setRadius(double radius) {
+    this.radius = radius;
+  }
+
+  public double calculateArea() {
+    return Math.PI * radius * radius;
+  }
+
+  public double calculatePerimeter() {
+    return 2 * Math.PI * radius;
+  }
+
+  public static void main(String[] args) {
+    Circle c = new Circle();
+    c.setRadius(4);
+    System.out.println("Area: " + c.calculateArea());
+    System.out.println("Perimeter: " + c.calculatePerimeter());
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Area: 50.265<br>Perimeter: 25.132</div>
+</div>
+<!-- 31 -->
+<div class="program">
+  <h2>31. Class "Car" with private variables and selective access</h2>
+  <pre>
+class Car {
+  private String company_name;
+  private String model_name;
+  private int year;
+  private double mileage;
+
+  public String getCompanyName() {
+    return company_name;
+  }
+
+  public void setCompanyName(String company_name) {
+    this.company_name = company_name;
+  }
+
+  public String getModelName() {
+    return model_name;
+  }
+
+  public void setModelName(String model_name) {
+    this.model_name = model_name;
+  }
+
+  public int getYear() {
+    return year;
+  }
+
+  public void setYear(int year) {
+    this.year = year;
+  }
+
+  public double getMileage() {
+    return mileage;
+  }
+
+  public void setMileage(double mileage) {
+    this.mileage = mileage;
+  }
+
+  public static void main(String[] args) {
+    Car c = new Car();
+    c.setCompanyName("Toyota");
+    c.setModelName("Fortuner");
+    c.setYear(2022);
+    c.setMileage(12.5);
+    System.out.println("Company: " + c.getCompanyName());
+    System.out.println("Model: " + c.getModelName());
+    System.out.println("Year: " + c.getYear());
+    System.out.println("Mileage: " + c.getMileage());
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Company: Toyota<br>Model: Fortuner<br>Year: 2022<br>Mileage: 12.5</div>
+</div>
+
+<!-- 32 -->
+<div class="program">
+  <h2>32. Class "Student" with grades and validation in addGrade()</h2>
+  <pre>
+import java.util.ArrayList;
+
+class Student {
+  private int student_id;
+  private String student_name;
+  private ArrayList&lt;Integer&gt; grades = new ArrayList&lt;&gt;();
+
+  public int getStudentId() {
+    return student_id;
+  }
+
+  public void setStudentId(int student_id) {
+    this.student_id = student_id;
+  }
+
+  public String getStudentName() {
+    return student_name;
+  }
+
+  public void setStudentName(String student_name) {
+    this.student_name = student_name;
+  }
+
+  public void addGrade(int grade) {
+    if (grade &gt;= 0 &amp;&amp; grade &lt;= 100) {
+      grades.add(grade);
+    } else {
+      System.out.println("Invalid grade: " + grade);
+    }
+  }
+
+  public void showGrades() {
+    System.out.println("Grades: " + grades);
+  }
+
+  public static void main(String[] args) {
+    Student s = new Student();
+    s.setStudentId(1);
+    s.setStudentName("Goutam");
+    s.addGrade(85);
+    s.addGrade(110); // Invalid
+    s.showGrades();
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Grades: [85]<br>Invalid grade: 110</div>
+</div>
+  </section>
+</body>
+</html>

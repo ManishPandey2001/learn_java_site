@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Applet Programs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0b0b;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 30px 100px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(11,11,11,0.8);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 400;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff4d4d;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-left: 40px;
+    }
+
+    .login {
+      color: #ff4d4d;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .content {
+      padding: 140px 100px 100px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .program {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    }
+
+    .program h2 {
+      color: #ffb300;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+
+    pre {
+      background: #000;
+      color: #0f0;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .output {
+      background: #1b1b1b;
+      border-radius: 8px;
+      padding: 15px;
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .navbar {
+        padding: 20px 40px;
+      }
+      .content {
+        padding: 120px 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+ 
+
+  <section class="content">
+    <h1>Java JDBC Programs</h1>
+
+    <!-- Program Blocks Start -->
+    <!-- Each block below follows your glowing modular format -->
+<!-- 1 -->
+<div class="program">
+  <h2>1. Create the connection with MySQL Database and manage the driver.</h2>
+  <pre>
+import java.sql.*;
+
+public class DBConnection {
+  public static void main(String[] args) {
+    try {
+      Class.forName("com.mysql.cj.jdbc.Driver");
+      Connection con = DriverManager.getConnection(
+        "jdbc:mysql://localhost:3306/testdb", "root", "password");
+      System.out.println("Connection successful");
+      con.close();
+    } catch (Exception e) {
+      System.out.println("Error: " + e);
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Connection successful (if credentials and DB are correct)</div>
+</div>
+
+<!-- 2 -->
+<div class="program">
+  <h2>2. Create the table in the database from Java API.</h2>
+  <pre>
+import java.sql.*;
+
+public class CreateTable {
+  public static void main(String[] args) {
+    try {
+      Connection con = DriverManager.getConnection(
+        "jdbc:mysql://localhost:3306/testdb", "root", "password");
+      Statement stmt = con.createStatement();
+      String sql = "CREATE TABLE students (id INT PRIMARY KEY, name VARCHAR(50))";
+      stmt.executeUpdate(sql);
+      System.out.println("Table created");
+      con.close();
+    } catch (Exception e) {
+      System.out.println("Error: " + e);
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Table created</div>
+</div>
+
+<!-- 3 -->
+<div class="program">
+  <h2>3. Insert the row in the table in the database from Java API.</h2>
+  <pre>
+import java.sql.*;
+
+public class InsertRow {
+  public static void main(String[] args) {
+    try {
+      Connection con = DriverManager.getConnection(
+        "jdbc:mysql://localhost:3306/testdb", "root", "password");
+      Statement stmt = con.createStatement();
+      String sql = "INSERT INTO students VALUES (1, 'Goutam')";
+      stmt.executeUpdate(sql);
+      System.out.println("Row inserted");
+      con.close();
+    } catch (Exception e) {
+      System.out.println("Error: " + e);
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Row inserted</div>
+</div>
+
+<!-- 4 -->
+<div class="program">
+  <h2>4. Update the row in the table in the database from Java API.</h2>
+  <pre>
+import java.sql.*;
+
+public class UpdateRow {
+  public static void main(String[] args) {
+    try {
+      Connection con = DriverManager.getConnection(
+        "jdbc:mysql://localhost:3306/testdb", "root", "password");
+      Statement stmt = con.createStatement();
+      String sql = "UPDATE students SET name='Goutam Singh' WHERE id=1";
+      stmt.executeUpdate(sql);
+      System.out.println("Row updated");
+      con.close();
+    } catch (Exception e) {
+      System.out.println("Error: " + e);
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Row updated</div>
+</div>
+
+<!-- 5 -->
+<div class="program">
+  <h2>5. Delete the row in the table in the database from Java API.</h2>
+  <pre>
+import java.sql.*;
+
+public class DeleteRow {
+  public static void main(String[] args) {
+    try {
+      Connection con = DriverManager.getConnection(
+        "jdbc:mysql://localhost:3306/testdb", "root", "password");
+      Statement stmt = con.createStatement();
+      String sql = "DELETE FROM students WHERE id=1";
+      stmt.executeUpdate(sql);
+      System.out.println("Row deleted");
+      con.close();
+    } catch (Exception e) {
+      System.out.println("Error: " + e);
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Row deleted</div>
+</div>
+<!-- 6 -->
+<div class="program">
+  <h2>6. Select multiple rows from the database table in Java API and show the result on the screen.</h2>
+  <pre>
+import java.sql.*;
+
+public class SelectRows {
+  public static void main(String[] args) {
+    try {
+      Connection con = DriverManager.getConnection(
+        "jdbc:mysql://localhost:3306/testdb", "root", "password");
+      Statement stmt = con.createStatement();
+      ResultSet rs = stmt.executeQuery("SELECT * FROM students");
+
+      while (rs.next()) {
+        System.out.println("ID: " + rs.getInt("id") + ", Name: " + rs.getString("name"));
+      }
+
+      con.close();
+    } catch (Exception e) {
+      System.out.println("Error: " + e);
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Displays all rows from the students table.</div>
+</div>
+
+<!-- 7 -->
+<div class="program">
+  <h2>7. Create a Scrollable Readonly Resultset and ask the row number from the user and display that row on the screen.</h2>
+  <pre>
+import java.sql.*;
+import java.util.Scanner;
+
+public class ScrollableReadonly {
+  public static void main(String[] args) {
+    try {
+      Scanner sc = new Scanner(System.in);
+      System.out.print("Enter row number: ");
+      int rowNum = sc.nextInt();
+
+      Connection con = DriverManager.getConnection(
+        "jdbc:mysql://localhost:3306/testdb", "root", "password");
+      Statement stmt = con.createStatement(
+        ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+      ResultSet rs = stmt.executeQuery("SELECT * FROM students");
+
+      if (rs.absolute(rowNum)) {
+        System.out.println("ID: " + rs.getInt("id") + ", Name: " + rs.getString("name"));
+      } else {
+        System.out.println("Row not found");
+      }
+
+      con.close();
+    } catch (Exception e) {
+      System.out.println("Error: " + e);
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Displays the row at the given position.</div>
+</div>
+
+<!-- 8 -->
+<div class="program">
+  <h2>8. Create a Scrollable Updateable Resultset and insert a new row, update an existing row and delete the row from Resultset and also the changes should be made to the database also. The values should be inserted, updated and deleted by the user only.</h2>
+  <pre>
+import java.sql.*;
+import java.util.Scanner;
+
+public class ScrollableUpdateable {
+  public static void main(String[] args) {
+    try {
+      Scanner sc = new Scanner(System.in);
+      Connection con = DriverManager.getConnection(
+        "jdbc:mysql://localhost:3306/testdb", "root", "password");
+      Statement stmt = con.createStatement(
+        ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+      ResultSet rs = stmt.executeQuery("SELECT * FROM students");
+
+      System.out.println("1. Insert\n2. Update\n3. Delete");
+      int choice = sc.nextInt();
+
+      if (choice == 1) {
+        rs.moveToInsertRow();
+        System.out.print("Enter ID: ");
+        rs.updateInt("id", sc.nextInt());
+        System.out.print("Enter Name: ");
+        rs.updateString("name", sc.next());
+        rs.insertRow();
+        System.out.println("Row inserted");
+      } else if (choice == 2) {
+        System.out.print("Enter row number to update: ");
+        int rowNum = sc.nextInt();
+        if (rs.absolute(rowNum)) {
+          System.out.print("Enter new name: ");
+          rs.updateString("name", sc.next());
+          rs.updateRow();
+          System.out.println("Row updated");
+        }
+      } else if (choice == 3) {
+        System.out.print("Enter row number to delete: ");
+        int rowNum = sc.nextInt();
+        if (rs.absolute(rowNum)) {
+          rs.deleteRow();
+          System.out.println("Row deleted");
+        }
+      }
+
+      con.close();
+    } catch (Exception e) {
+      System.out.println("Error: " + e);
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Performs insert, update, or delete based on user input.</div>
+</div>
+
+<!-- 9 -->
+<div class="program">
+  <h2>9. Create a Java Program to show, insert, update, delete of the table in Java API through PreparedStatement.</h2>
+  <pre>
+import java.sql.*;
+import java.util.Scanner;
+
+public class PreparedStatementDemo {
+  public static void main(String[] args) {
+    try {
+      Scanner sc = new Scanner(System.in);
+      Connection con = DriverManager.getConnection(
+        "jdbc:mysql://localhost:3306/testdb", "root", "password");
+
+      System.out.println("1. Show\n2. Insert\n3. Update\n4. Delete");
+      int choice = sc.nextInt();
+
+      if (choice == 1) {
+        PreparedStatement ps = con.prepareStatement("SELECT * FROM students");
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+          System.out.println("ID: " + rs.getInt("id") + ", Name: " + rs.getString("name"));
+        }
+      } else if (choice == 2) {
+        PreparedStatement ps = con.prepareStatement("INSERT INTO students VALUES (?, ?)");
+        System.out.print("Enter ID: ");
+        ps.setInt(1, sc.nextInt());
+        System.out.print("Enter Name: ");
+        ps.setString(2, sc.next());
+        ps.executeUpdate();
+        System.out.println("Row inserted");
+      } else if (choice == 3) {
+        PreparedStatement ps = con.prepareStatement("UPDATE students SET name=? WHERE id=?");
+        System.out.print("Enter new Name: ");
+        ps.setString(1, sc.next());
+        System.out.print("Enter ID: ");
+        ps.setInt(2, sc.nextInt());
+        ps.executeUpdate();
+        System.out.println("Row updated");
+      } else if (choice == 4) {
+        PreparedStatement ps = con.prepareStatement("DELETE FROM students WHERE id=?");
+        System.out.print("Enter ID: ");
+        ps.setInt(1, sc.nextInt());
+        ps.executeUpdate();
+        System.out.println("Row deleted");
+      }
+
+      con.close();
+    } catch (Exception e) {
+      System.out.println("Error: " + e);
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Performs selected operation using PreparedStatement.</div>
+</div>
+
+
+  </section>
+</body>
+</html>

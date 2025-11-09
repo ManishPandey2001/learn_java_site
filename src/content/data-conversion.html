@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Applet Programs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0b0b;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 30px 100px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(11,11,11,0.8);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 400;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff4d4d;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-left: 40px;
+    }
+
+    .login {
+      color: #ff4d4d;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .content {
+      padding: 140px 100px 100px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .program {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    }
+
+    .program h2 {
+      color: #ffb300;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+
+    pre {
+      background: #000;
+      color: #0f0;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .output {
+      background: #1b1b1b;
+      border-radius: 8px;
+      padding: 15px;
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .navbar {
+        padding: 20px 40px;
+      }
+      .content {
+        padding: 120px 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+ 
+
+  <section class="content">
+    <h1>Java Conversion Programs</h1>
+
+    <!-- Program Blocks Start -->
+    <!-- Each block below follows your glowing modular format -->
+
+    <!-- 1 -->
+    <div class="program">
+      <h2>1. How to convert String to int</h2>
+      <pre>
+public class StringToInt {
+  public static void main(String[] args) {
+    String str = "123";
+    int num = Integer.parseInt(str);
+    System.out.println("Converted int: " + num);
+  }
+}
+      </pre>
+      <div class="output">Output: Converted int: 123</div>
+    </div>
+
+    <!-- 2 -->
+    <div class="program">
+      <h2>2. How to convert int to String</h2>
+      <pre>
+public class IntToString {
+  public static void main(String[] args) {
+    int num = 456;
+    String str = Integer.toString(num);
+    System.out.println("Converted String: " + str);
+  }
+}
+      </pre>
+      <div class="output">Output: Converted String: 456</div>
+    </div>
+
+    <!-- 3 -->
+    <div class="program">
+      <h2>3. How to convert String to long</h2>
+      <pre>
+public class StringToLong {
+  public static void main(String[] args) {
+    String str = "9876543210";
+    long num = Long.parseLong(str);
+    System.out.println("Converted long: " + num);
+  }
+}
+      </pre>
+      <div class="output">Output: Converted long: 9876543210</div>
+    </div>
+
+    <!-- 4 -->
+    <div class="program">
+      <h2>4. How to convert long to String</h2>
+      <pre>
+public class LongToString {
+  public static void main(String[] args) {
+    long num = 1234567890L;
+    String str = String.valueOf(num);
+    System.out.println("Converted String: " + str);
+  }
+}
+      </pre>
+      <div class="output">Output: Converted String: 1234567890</div>
+    </div>
+
+    <!-- 5 -->
+    <div class="program">
+      <h2>5. How to convert String to float</h2>
+      <pre>
+public class StringToFloat {
+  public static void main(String[] args) {
+    String str = "12.34";
+    float f = Float.parseFloat(str);
+    System.out.println("Converted float: " + f);
+  }
+}
+      </pre>
+      <div class="output">Output: Converted float: 12.34</div>
+    </div>
+<!-- 6 -->
+<div class="program">
+  <h2>6. How to convert float to String</h2>
+  <pre>
+public class FloatToString {
+  public static void main(String[] args) {
+    float f = 45.67f;
+    String str = Float.toString(f);
+    System.out.println("Converted String: " + str);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted String: 45.67</div>
+</div>
+
+<!-- 7 -->
+<div class="program">
+  <h2>7. How to convert String to double</h2>
+  <pre>
+public class StringToDouble {
+  public static void main(String[] args) {
+    String str = "123.456";
+    double d = Double.parseDouble(str);
+    System.out.println("Converted double: " + d);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted double: 123.456</div>
+</div>
+
+<!-- 8 -->
+<div class="program">
+  <h2>8. How to convert double to String</h2>
+  <pre>
+public class DoubleToString {
+  public static void main(String[] args) {
+    double d = 789.01;
+    String str = String.valueOf(d);
+    System.out.println("Converted String: " + str);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted String: 789.01</div>
+</div>
+
+<!-- 9 -->
+<div class="program">
+  <h2>9. How to convert String to Date</h2>
+  <pre>
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class StringToDate {
+  public static void main(String[] args) throws Exception {
+    String str = "2025-10-31";
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    Date date = sdf.parse(str);
+    System.out.println("Converted Date: " + date);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted Date: Fri Oct 31 00:00:00 IST 2025</div>
+</div>
+
+<!-- 10 -->
+<div class="program">
+  <h2>10. How to convert Date to String</h2>
+  <pre>
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DateToString {
+  public static void main(String[] args) {
+    Date date = new Date();
+    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+    String str = sdf.format(date);
+    System.out.println("Converted String: " + str);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted String: (current date in dd-MM-yyyy format)</div>
+</div>
+
+<!-- 11 -->
+<div class="program">
+  <h2>11. How to convert String to char</h2>
+  <pre>
+public class StringToChar {
+  public static void main(String[] args) {
+    String str = "Java";
+    char ch = str.charAt(0);
+    System.out.println("Converted char: " + ch);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted char: J</div>
+</div>
+
+<!-- 12 -->
+<div class="program">
+  <h2>12. How to convert char to String</h2>
+  <pre>
+public class CharToString {
+  public static void main(String[] args) {
+    char ch = 'A';
+    String str = Character.toString(ch);
+    System.out.println("Converted String: " + str);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted String: A</div>
+</div>
+
+<!-- 13 -->
+<div class="program">
+  <h2>13. How to convert String to Object</h2>
+  <pre>
+public class StringToObject {
+  public static void main(String[] args) {
+    String str = "Hello";
+    Object obj = str;
+    System.out.println("Converted Object: " + obj);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted Object: Hello</div>
+</div>
+
+<!-- 14 -->
+<div class="program">
+  <h2>14. How to convert Object to String</h2>
+  <pre>
+public class ObjectToString {
+  public static void main(String[] args) {
+    Object obj = "World";
+    String str = obj.toString();
+    System.out.println("Converted String: " + str);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted String: World</div>
+</div>
+
+<!-- 15 -->
+<div class="program">
+  <h2>15. How to convert int to long</h2>
+  <pre>
+public class IntToLong {
+  public static void main(String[] args) {
+    int num = 100;
+    long l = num;
+    System.out.println("Converted long: " + l);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted long: 100</div>
+</div>
+
+<!-- 16 -->
+<div class="program">
+  <h2>16. How to convert long to int</h2>
+  <pre>
+public class LongToInt {
+  public static void main(String[] args) {
+    long l = 100L;
+    int num = (int) l;
+    System.out.println("Converted int: " + num);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted int: 100</div>
+</div>
+
+<!-- 17 -->
+<div class="program">
+  <h2>17. How to convert int to double</h2>
+  <pre>
+public class IntToDouble {
+  public static void main(String[] args) {
+    int num = 50;
+    double d = num;
+    System.out.println("Converted double: " + d);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted double: 50.0</div>
+</div>
+
+<!-- 18 -->
+<div class="program">
+  <h2>18. How to convert double to int</h2>
+  <pre>
+public class DoubleToInt {
+  public static void main(String[] args) {
+    double d = 99.99;
+    int num = (int) d;
+    System.out.println("Converted int: " + num);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted int: 99</div>
+</div>
+
+<!-- 19 -->
+<div class="program">
+  <h2>19. How to convert char to int</h2>
+  <pre>
+public class CharToInt {
+  public static void main(String[] args) {
+    char ch = 'A';
+    int num = ch;
+    System.out.println("Converted int: " + num);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted int: 65</div>
+</div>
+
+<!-- 20 -->
+<div class="program">
+  <h2>20. How to convert int to char</h2>
+  <pre>
+public class IntToChar {
+  public static void main(String[] args) {
+    int num = 66;
+    char ch = (char) num;
+    System.out.println("Converted char: " + ch);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted char: B</div>
+</div>
+
+<!-- 21 -->
+<div class="program">
+  <h2>21. How to convert String to boolean</h2>
+  <pre>
+public class StringToBoolean {
+  public static void main(String[] args) {
+    String str = "true";
+    boolean b = Boolean.parseBoolean(str);
+    System.out.println("Converted boolean: " + b);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted boolean: true</div>
+</div>
+
+<!-- 22 -->
+<div class="program">
+  <h2>22. How to convert boolean to String</h2>
+  <pre>
+public class BooleanToString {
+  public static void main(String[] args) {
+    boolean b = false;
+    String str = Boolean.toString(b);
+    System.out.println("Converted String: " + str);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted String: false</div>
+</div>
+
+<!-- 23 -->
+<div class="program">
+  <h2>23. How to convert Date to Timestamp</h2>
+  <pre>
+import java.util.Date;
+import java.sql.Timestamp;
+
+public class DateToTimestamp {
+  public static void main(String[] args) {
+    Date date = new Date();
+    Timestamp ts = new Timestamp(date.getTime());
+    System.out.println("Converted Timestamp: " + ts);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted Timestamp: (current timestamp)</div>
+</div>
+<!-- 24 -->
+<div class="program">
+  <h2>24. How to convert Timestamp to Date</h2>
+  <pre>
+import java.util.Date;
+import java.sql.Timestamp;
+
+public class TimestampToDate {
+  public static void main(String[] args) {
+    Timestamp ts = new Timestamp(System.currentTimeMillis());
+    Date date = new Date(ts.getTime());
+    System.out.println("Converted Date: " + date);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted Date: (current date and time)</div>
+</div>
+
+<!-- 25 -->
+<div class="program">
+  <h2>25. How to convert Binary to Decimal</h2>
+  <pre>
+public class BinaryToDecimal {
+  public static void main(String[] args) {
+    String binary = "1010";
+    int decimal = Integer.parseInt(binary, 2);
+    System.out.println("Converted Decimal: " + decimal);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted Decimal: 10</div>
+</div>
+
+<!-- 26 -->
+<div class="program">
+  <h2>26. How to convert Decimal to Binary</h2>
+  <pre>
+public class DecimalToBinary {
+  public static void main(String[] args) {
+    int decimal = 10;
+    String binary = Integer.toBinaryString(decimal);
+    System.out.println("Converted Binary: " + binary);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted Binary: 1010</div>
+</div>
+
+<!-- 27 -->
+<div class="program">
+  <h2>27. How to convert Hex to Decimal</h2>
+  <pre>
+public class HexToDecimal {
+  public static void main(String[] args) {
+    String hex = "1A";
+    int decimal = Integer.parseInt(hex, 16);
+    System.out.println("Converted Decimal: " + decimal);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted Decimal: 26</div>
+</div>
+
+<!-- 28 -->
+<div class="program">
+  <h2>28. How to convert Decimal to Hex</h2>
+  <pre>
+public class DecimalToHex {
+  public static void main(String[] args) {
+    int decimal = 26;
+    String hex = Integer.toHexString(decimal);
+    System.out.println("Converted Hex: " + hex.toUpperCase());
+  }
+}
+  </pre>
+  <div class="output">Output: Converted Hex: 1A</div>
+</div>
+
+<!-- 29 -->
+<div class="program">
+  <h2>29. How to convert Octal to Decimal</h2>
+  <pre>
+public class OctalToDecimal {
+  public static void main(String[] args) {
+    String octal = "17";
+    int decimal = Integer.parseInt(octal, 8);
+    System.out.println("Converted Decimal: " + decimal);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted Decimal: 15</div>
+</div>
+
+<!-- 30 -->
+<div class="program">
+  <h2>30. How to convert Decimal to Octal</h2>
+  <pre>
+public class DecimalToOctal {
+  public static void main(String[] args) {
+    int decimal = 15;
+    String octal = Integer.toOctalString(decimal);
+    System.out.println("Converted Octal: " + octal);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted Octal: 17</div>
+</div>
+
+
+
+  </section>
+</body>
+</html>

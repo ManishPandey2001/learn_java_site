@@ -1,0 +1,108 @@
+/* ===== THEME COLORS ===== */
+:root {
+  --page-bg: #eaf7ff;          /* soft blue tint for page */
+  --primary-soft: #a9d6ff;     /* sky blue */
+  --secondary-soft: #cbb8ff;   /* pastel purple */
+  --accent-yellow: #fff6a7;    /* soft yellow */
+  --accent-red: #ffb3b3;       /* soft coral/red */
+  --text-dark: #2a2a2a;
+  --border-soft: rgba(0, 0, 0, 0.08);
+}
+
+/* ===== GLOBAL ===== */
+body, .bg-page {
+  background: var(--page-bg);
+  color: var(--text-dark);
+}
+
+/* HERO (soft blue->purple) */
+.hero {
+  background: linear-gradient(135deg, var(--primary-soft) 0%, #ffffff 45%, var(--secondary-soft) 100%);
+  border: 1px solid var(--border-soft);
+}
+
+/* CARDS */
+.hover-lift {
+  transition: transform .15s ease, box-shadow .15s ease, border-color .2s;
+}
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 .5rem 1.25rem rgba(0,0,0,.08);
+  border-color: var(--primary-soft);
+}
+
+/* BUTTONS */
+.btn-primary {
+  background-color: var(--primary-soft);
+  border-color: var(--primary-soft);
+  color: #04396e;
+}
+.btn-primary:hover {
+  background-color: #8ac4ff;
+  border-color: #8ac4ff;
+  color: #042f59;
+}
+.btn-outline-secondary {
+  border-color: var(--secondary-soft);
+  color: #5c4c84;
+}
+.btn-outline-secondary:hover {
+  background-color: var(--secondary-soft);
+  color: #fff;
+}
+
+/* BADGES */
+.badge-soft-yellow { background-color: var(--accent-yellow); }
+.badge-soft-red    { background-color: var(--accent-red); }
+
+/* TOPIC HTML FIXES */
+.topic-html img { max-width: 100%; height: auto; }
+.topic-html table { width: 100%; border: 1px solid var(--border-soft); }
+
+/* Sticky header offset */
+:target { scroll-margin-top: 84px; }
+
+/* ===== NAVBAR (Aqua) ===== */
+.navbar-custom {
+  background: linear-gradient(90deg, #06b7d6 0%, #05f8c4 100%); /* aqua */
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,.06); /* subtle shadow */
+}
+.navbar-custom .navbar-brand {
+  color: #023047 !important;
+}
+.navbar-custom .nav-link {
+  color: #064663 !important;
+}
+
+/* Make the active pill match the aqua theme */
+.navbar-custom .nav-pills .nav-link.active,
+.navbar-custom .nav-link.active {
+  background-color: rgba(255,255,255,.55) !important;
+  color: #022b3a !important;
+  border-color: transparent;
+  box-shadow: 0 0 0 2px rgba(255,255,255,.35) inset;
+}
+
+/* Optional: nicer hover */
+.navbar-custom .nav-link:hover {
+  text-decoration: none;
+  background-color: rgba(255,255,255,.25);
+  border-radius: .5rem;
+}
+
+/* Container breathing room on very wide screens */
+.container-xxl { padding-left: .75rem; padding-right: .75rem; }
+
+/* Soft green-yellow gradient for program cards */
+.card-gradient {
+  background: linear-gradient(135deg, #d7ffd9 0%, #fff8c4 100%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .2s;
+}
+
+.card-gradient:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 .5rem 1.25rem rgba(0, 0, 0, 0.10);
+  border-color: #b7f5b9;
+}

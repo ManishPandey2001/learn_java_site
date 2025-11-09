@@ -1,0 +1,3062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Applet Programs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0b0b;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 30px 100px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(11,11,11,0.8);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 400;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff4d4d;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-left: 40px;
+    }
+
+    .login {
+      color: #ff4d4d;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .content {
+      padding: 140px 100px 100px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .program {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    }
+
+    .program h2 {
+      color: #ffb300;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+
+    pre {
+      background: #000;
+      color: #0f0;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .output {
+      background: #1b1b1b;
+      border-radius: 8px;
+      padding: 15px;
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .navbar {
+        padding: 20px 40px;
+      }
+      .content {
+        padding: 120px 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+ 
+
+  <section class="content">
+    <h1>Java Basic Programs</h1>
+
+    <!-- Program Blocks Start -->
+    <!-- Each block below follows your glowing modular format -->
+<!-- 1 -->
+<div class="program">
+  <h2>1. Print ‘Hello World!’ on screen</h2>
+  <pre>
+public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello World!");
+  }
+}
+  </pre>
+  <div class="output">Output: Hello World!</div>
+</div>
+
+<!-- 2 -->
+<div class="program">
+  <h2>2. Print the sum of two numbers</h2>
+  <pre>
+public class SumTwoNumbers {
+  public static void main(String[] args) {
+    int a = 5, b = 7;
+    int sum = a + b;
+    System.out.println("Sum: " + sum);
+  }
+}
+  </pre>
+  <div class="output">Output: Sum: 12</div>
+</div>
+
+<!-- 3 -->
+<div class="program">
+  <h2>3. Display the product of two numbers</h2>
+  <pre>
+import java.util.Scanner;
+
+public class ProductTwoNumbers {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter first number: ");
+    int a = sc.nextInt();
+    System.out.print("Enter second number: ");
+    int b = sc.nextInt();
+    int product = a * b;
+    System.out.println("Product: " + product);
+  }
+}
+  </pre>
+  <div class="output">Output: Product based on user input</div>
+</div>
+
+<!-- 4 -->
+<div class="program">
+  <h2>4. Sum, multiply, subtract, divide and remainder of two numbers</h2>
+  <pre>
+public class ArithmeticOperations {
+  public static void main(String[] args) {
+    int a = 20, b = 6;
+    System.out.println("Sum: " + (a + b));
+    System.out.println("Multiply: " + (a * b));
+    System.out.println("Subtract: " + (a - b));
+    System.out.println("Divide: " + (a / b));
+    System.out.println("Remainder: " + (a % b));
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Sum: 26<br>Multiply: 120<br>Subtract: 14<br>Divide: 3<br>Remainder: 2</div>
+</div>
+
+<!-- 5 -->
+<div class="program">
+  <h2>5. Calculate and print average of five numbers</h2>
+  <pre>
+import java.util.Scanner;
+
+public class AverageFive {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int sum = 0;
+    for (int i = 1; i <= 5; i++) {
+      System.out.print("Enter number " + i + ": ");
+      sum += sc.nextInt();
+    }
+    double avg = sum / 5.0;
+    System.out.println("Average: " + avg);
+  }
+}
+  </pre>
+  <div class="output">Output: Average based on user input</div>
+</div>
+
+<!-- 6 -->
+<div class="program">
+  <h2>6. Swap two variables</h2>
+  <pre>
+public class SwapVariables {
+  public static void main(String[] args) {
+    int a = 5, b = 10;
+    System.out.println("Before swap: a = " + a + ", b = " + b);
+    int temp = a;
+    a = b;
+    b = temp;
+    System.out.println("After swap: a = " + a + ", b = " + b);
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Before swap: a = 5, b = 10<br>After swap: a = 10, b = 5</div>
+</div>
+
+<!-- 7 -->
+<div class="program">
+  <h2>7. Convert decimal number to binary</h2>
+  <pre>
+import java.util.Scanner;
+
+public class DecimalToBinary {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter decimal number: ");
+    int num = sc.nextInt();
+    String binary = Integer.toBinaryString(num);
+    System.out.println("Binary: " + binary);
+  }
+}
+  </pre>
+  <div class="output">Output: Binary based on user input</div>
+</div>
+
+<!-- 8 -->
+<div class="program">
+  <h2>8. Convert binary number to decimal</h2>
+  <pre>
+import java.util.Scanner;
+
+public class BinaryToDecimal {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter binary number: ");
+    String binary = sc.nextLine();
+    int decimal = Integer.parseInt(binary, 2);
+    System.out.println("Decimal: " + decimal);
+  }
+}
+  </pre>
+  <div class="output">Output: Decimal based on user input</div>
+</div>
+
+<!-- 9 -->
+<div class="program">
+  <h2>9. Check whether Java is installed</h2>
+  <pre>
+public class CheckJava {
+  public static void main(String[] args) {
+    System.out.println("Java is installed and running!");
+  }
+}
+  </pre>
+  <div class="output">Output: Java is installed and running!</div>
+</div>
+
+<!-- 10 -->
+<div class="program">
+  <h2>10. Compute the sum of the digits of an integer</h2>
+  <pre>
+import java.util.Scanner;
+
+public class SumOfDigits {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter an integer: ");
+    int num = sc.nextInt();
+    int sum = 0;
+
+    while (num != 0) {
+      sum += num % 10;
+      num /= 10;
+    }
+
+    System.out.println("Sum of digits: " + sum);
+  }
+}
+  </pre>
+  <div class="output">Output: Sum of digits based on user input</div>
+</div>
+<!-- 11 -->
+<div class="program">
+  <h2>11. Compare two numbers</h2>
+  <pre>
+import java.util.Scanner;
+
+public class CompareNumbers {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter first number: ");
+    int a = sc.nextInt();
+    System.out.print("Enter second number: ");
+    int b = sc.nextInt();
+
+    if (a > b)
+      System.out.println(a + " is greater than " + b);
+    else if (a < b)
+      System.out.println(b + " is greater than " + a);
+    else
+      System.out.println("Both numbers are equal");
+  }
+}
+  </pre>
+  <div class="output">Output: Comparison based on user input</div>
+</div>
+
+<!-- 12 -->
+<div class="program">
+  <h2>12. Count letters, spaces, numbers and other characters</h2>
+  <pre>
+import java.util.Scanner;
+
+public class CharacterCounter {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a string: ");
+    String str = sc.nextLine();
+
+    int letters = 0, spaces = 0, digits = 0, others = 0;
+
+    for (char ch : str.toCharArray()) {
+      if (Character.isLetter(ch)) letters++;
+      else if (Character.isDigit(ch)) digits++;
+      else if (Character.isSpaceChar(ch)) spaces++;
+      else others++;
+    }
+
+    System.out.println("Letters: " + letters);
+    System.out.println("Spaces: " + spaces);
+    System.out.println("Digits: " + digits);
+    System.out.println("Others: " + others);
+  }
+}
+  </pre>
+  <div class="output">Output: Counts based on input string</div>
+</div>
+
+<!-- 13 -->
+<div class="program">
+  <h2>13. Print ASCII value of a character</h2>
+  <pre>
+import java.util.Scanner;
+
+public class AsciiValue {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a character: ");
+    char ch = sc.next().charAt(0);
+    int ascii = ch;
+    System.out.println("ASCII value: " + ascii);
+  }
+}
+  </pre>
+  <div class="output">Output: ASCII value based on input</div>
+</div>
+
+<!-- 14 -->
+<div class="program">
+  <h2>14. Compute n + nn + nnn</h2>
+  <pre>
+import java.util.Scanner;
+
+public class PatternSum {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter an integer n: ");
+    int n = sc.nextInt();
+
+    String s1 = Integer.toString(n);
+    String s2 = s1 + s1;
+    String s3 = s2 + s1;
+
+    int total = Integer.parseInt(s1) + Integer.parseInt(s2) + Integer.parseInt(s3);
+    System.out.println("Result: " + total);
+  }
+}
+  </pre>
+  <div class="output">Output: Result based on input n</div>
+</div>
+
+<!-- 15 -->
+<div class="program">
+  <h2>15. Display system time</h2>
+  <pre>
+import java.time.LocalTime;
+
+public class SystemTime {
+  public static void main(String[] args) {
+    LocalTime time = LocalTime.now();
+    System.out.println("Current Time: " + time);
+  }
+}
+  </pre>
+  <div class="output">Output: Current system time</div>
+</div>
+
+<!-- 16 -->
+<div class="program">
+  <h2>16. Print odd numbers from 1 to 20</h2>
+  <pre>
+public class OddNumbers {
+  public static void main(String[] args) {
+    for (int i = 1; i <= 20; i++) {
+      if (i % 2 != 0)
+        System.out.print(i + " ");
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: 1 3 5 7 9 11 13 15 17 19</div>
+</div>
+
+<!-- 17 -->
+<div class="program">
+  <h2>17. Print even numbers from 1 to 20</h2>
+  <pre>
+public class EvenNumbers {
+  public static void main(String[] args) {
+    for (int i = 1; i <= 20; i++) {
+      if (i % 2 == 0)
+        System.out.print(i + " ");
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: 2 4 6 8 10 12 14 16 18 20</div>
+</div>
+
+<!-- 18 -->
+<div class="program">
+  <h2>18. Convert string to integer</h2>
+  <pre>
+public class StringToInteger {
+  public static void main(String[] args) {
+    String str = "1234";
+    int num = Integer.parseInt(str);
+    System.out.println("Converted Integer: " + num);
+  }
+}
+  </pre>
+  <div class="output">Output: Converted Integer: 1234</div>
+</div>
+
+<!-- 19 -->
+<div class="program">
+  <h2>19. Convert seconds to hour, minute and seconds</h2>
+  <pre>
+import java.util.Scanner;
+
+public class TimeConversion {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter seconds: ");
+    int totalSeconds = sc.nextInt();
+
+    int hours = totalSeconds / 3600;
+    int minutes = (totalSeconds % 3600) / 60;
+    int seconds = totalSeconds % 60;
+
+    System.out.println("Time: " + hours + "h " + minutes + "m " + seconds + "s");
+  }
+}
+  </pre>
+  <div class="output">Output: Time based on input seconds</div>
+</div>
+
+<!-- 20 -->
+<div class="program">
+  <h2>20. Compute sum of first 100 prime numbers</h2>
+  <pre>
+public class SumPrimes {
+  public static boolean isPrime(int n) {
+    if (n <= 1) return false;
+    for (int i = 2; i <= Math.sqrt(n); i++) {
+      if (n % i == 0) return false;
+    }
+    return true;
+  }
+
+  public static void main(String[] args) {
+    int count = 0, num = 2, sum = 0;
+    while (count < 100) {
+      if (isPrime(num)) {
+        sum += num;
+        count++;
+      }
+      num++;
+    }
+    System.out.println("Sum of first 100 primes: " + sum);
+  }
+}
+  </pre>
+  <div class="output">Output: Sum of first 100 prime numbers</div>
+</div>
+<!-- 21 -->
+<div class="program">
+  <h2>21. Swap first and last elements of an array</h2>
+  <pre>
+import java.util.Arrays;
+
+public class SwapArrayEnds {
+  public static void main(String[] args) {
+    int[] arr = {1, 2, 3, 4, 5};
+    int temp = arr[0];
+    arr[0] = arr[arr.length - 1];
+    arr[arr.length - 1] = temp;
+
+    System.out.println("Swapped Array: " + Arrays.toString(arr));
+  }
+}
+  </pre>
+  <div class="output">Output: Swapped Array: [5, 2, 3, 4, 1]</div>
+</div>
+
+<!-- 22 -->
+<div class="program">
+  <h2>22. Count even and odd elements in an array</h2>
+  <pre>
+public class CountEvenOdd {
+  public static void main(String[] args) {
+    int[] arr = {1, 2, 3, 4, 5, 6};
+    int even = 0, odd = 0;
+
+    for (int num : arr) {
+      if (num % 2 == 0) even++;
+      else odd++;
+    }
+
+    System.out.println("Even: " + even);
+    System.out.println("Odd: " + odd);
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Even: 3<br>Odd: 3</div>
+</div>
+
+<!-- 23 -->
+<div class="program">
+  <h2>23. Compute square root of an integer</h2>
+  <pre>
+import java.util.Scanner;
+
+public class SquareRoot {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a number: ");
+    int num = sc.nextInt();
+    double sqrt = Math.sqrt(num);
+    System.out.println("Square root: " + sqrt);
+  }
+}
+  </pre>
+  <div class="output">Output: Square root based on input</div>
+</div>
+
+<!-- 24 -->
+<div class="program">
+  <h2>24. Check if a positive number is a palindrome</h2>
+  <pre>
+import java.util.Scanner;
+
+public class PalindromeCheck {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a positive number: ");
+    int num = sc.nextInt();
+    int original = num, reversed = 0;
+
+    while (num != 0) {
+      reversed = reversed * 10 + num % 10;
+      num /= 10;
+    }
+
+    if (original == reversed)
+      System.out.println("Palindrome");
+    else
+      System.out.println("Not a palindrome");
+  }
+}
+  </pre>
+  <div class="output">Output: Palindrome or Not based on input</div>
+</div>
+
+<!-- 25 -->
+<div class="program">
+  <h2>25. Add two numbers without using arithmetic operators</h2>
+  <pre>
+public class AddWithoutOperators {
+  public static void main(String[] args) {
+    int a = 5, b = 7;
+
+    while (b != 0) {
+      int carry = a & b;
+      a = a ^ b;
+      b = carry << 1;
+    }
+
+    System.out.println("Sum: " + a);
+  }
+}
+  </pre>
+  <div class="output">Output: Sum: 12</div>
+</div>
+
+<!-- 26 -->
+<div class="program">
+  <h2>26. Add all digits of a positive integer</h2>
+  <pre>
+import java.util.Scanner;
+
+public class DigitSum {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a positive integer: ");
+    int num = sc.nextInt();
+    int sum = 0;
+
+    while (num != 0) {
+      sum += num % 10;
+      num /= 10;
+    }
+
+    System.out.println("Sum of digits: " + sum);
+  }
+}
+  </pre>
+  <div class="output">Output: Sum of digits based on input</div>
+</div>
+
+<!-- 27 -->
+<div class="program">
+  <h2>27. Find area of circle</h2>
+  <pre>
+import java.util.Scanner;
+
+public class AreaCircle {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter radius: ");
+    double r = sc.nextDouble();
+    double area = Math.PI * r * r;
+    System.out.println("Area of circle: " + area);
+  }
+}
+  </pre>
+  <div class="output">Output: Area based on radius</div>
+</div>
+
+<!-- 28 -->
+<div class="program">
+  <h2>28. Find area of rectangle</h2>
+  <pre>
+import java.util.Scanner;
+
+public class AreaRectangle {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter length: ");
+    double l = sc.nextDouble();
+    System.out.print("Enter width: ");
+    double w = sc.nextDouble();
+    double area = l * w;
+    System.out.println("Area of rectangle: " + area);
+  }
+}
+  </pre>
+  <div class="output">Output: Area based on length and width</div>
+</div>
+
+<!-- 29 -->
+<div class="program">
+  <h2>29. Find area of triangle</h2>
+  <pre>
+import java.util.Scanner;
+
+public class AreaTriangle {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter base: ");
+    double b = sc.nextDouble();
+    System.out.print("Enter height: ");
+    double h = sc.nextDouble();
+    double area = 0.5 * b * h;
+    System.out.println("Area of triangle: " + area);
+  }
+}
+  </pre>
+  <div class="output">Output: Area based on base and height</div>
+</div>
+
+<!-- 30 -->
+<div class="program">
+  <h2>30. Find area of equilateral triangle</h2>
+  <pre>
+import java.util.Scanner;
+
+public class AreaEquilateralTriangle {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter side length: ");
+    double a = sc.nextDouble();
+    double area = (Math.sqrt(3) / 4) * a * a;
+    System.out.println("Area of equilateral triangle: " + area);
+  }
+}
+  </pre>
+  <div class="output">Output: Area based on side length</div>
+</div>
+<!-- 31 -->
+<div class="program">
+  <h2>31. Find area of rhombus</h2>
+  <pre>
+import java.util.Scanner;
+
+public class AreaRhombus {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter diagonal 1: ");
+    double d1 = sc.nextDouble();
+    System.out.print("Enter diagonal 2: ");
+    double d2 = sc.nextDouble();
+    double area = (d1 * d2) / 2;
+    System.out.println("Area of rhombus: " + area);
+  }
+}
+  </pre>
+  <div class="output">Output: Area based on diagonals</div>
+</div>
+
+<!-- 32 -->
+<div class="program">
+  <h2>32. Find area of parallelogram</h2>
+  <pre>
+import java.util.Scanner;
+
+public class AreaParallelogram {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter base: ");
+    double b = sc.nextDouble();
+    System.out.print("Enter height: ");
+    double h = sc.nextDouble();
+    double area = b * h;
+    System.out.println("Area of parallelogram: " + area);
+  }
+}
+  </pre>
+  <div class="output">Output: Area based on base and height</div>
+</div>
+
+<!-- 33 -->
+<div class="program">
+  <h2>33. Find area of prism</h2>
+  <pre>
+import java.util.Scanner;
+
+public class AreaPrism {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter base area: ");
+    double base = sc.nextDouble();
+    System.out.print("Enter height: ");
+    double height = sc.nextDouble();
+    double area = base * height;
+    System.out.println("Area of prism: " + area);
+  }
+}
+  </pre>
+  <div class="output">Output: Area based on base and height</div>
+</div>
+
+<!-- 34 -->
+<div class="program">
+  <h2>34. Find volume of sphere</h2>
+  <pre>
+import java.util.Scanner;
+
+public class VolumeSphere {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter radius: ");
+    double r = sc.nextDouble();
+    double volume = (4.0 / 3) * Math.PI * Math.pow(r, 3);
+    System.out.println("Volume of sphere: " + volume);
+  }
+}
+  </pre>
+  <div class="output">Output: Volume based on radius</div>
+</div>
+
+<!-- 35 -->
+<div class="program">
+  <h2>35. Find volume of cylinder</h2>
+  <pre>
+import java.util.Scanner;
+
+public class VolumeCylinder {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter radius: ");
+    double r = sc.nextDouble();
+    System.out.print("Enter height: ");
+    double h = sc.nextDouble();
+    double volume = Math.PI * r * r * h;
+    System.out.println("Volume of cylinder: " + volume);
+  }
+}
+  </pre>
+  <div class="output">Output: Volume based on radius and height</div>
+</div>
+
+<!-- 36 -->
+<div class="program">
+  <h2>36. Find volume of cuboid</h2>
+  <pre>
+import java.util.Scanner;
+
+public class VolumeCuboid {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter length: ");
+    double l = sc.nextDouble();
+    System.out.print("Enter width: ");
+    double w = sc.nextDouble();
+    System.out.print("Enter height: ");
+    double h = sc.nextDouble();
+    double volume = l * w * h;
+    System.out.println("Volume of cuboid: " + volume);
+  }
+}
+  </pre>
+  <div class="output">Output: Volume based on dimensions</div>
+</div>
+
+<!-- 37 -->
+<div class="program">
+  <h2>37. Find volume of cone</h2>
+  <pre>
+import java.util.Scanner;
+
+public class VolumeCone {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter radius: ");
+    double r = sc.nextDouble();
+    System.out.print("Enter height: ");
+    double h = sc.nextDouble();
+    double volume = (Math.PI * r * r * h) / 3;
+    System.out.println("Volume of cone: " + volume);
+  }
+}
+  </pre>
+  <div class="output">Output: Volume based on radius and height</div>
+</div>
+
+<!-- 38 -->
+<div class="program">
+  <h2>38. Find surface area of cuboid</h2>
+  <pre>
+import java.util.Scanner;
+
+public class SurfaceCuboid {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter length: ");
+    double l = sc.nextDouble();
+    System.out.print("Enter width: ");
+    double w = sc.nextDouble();
+    System.out.print("Enter height: ");
+    double h = sc.nextDouble();
+    double area = 2 * (l * w + w * h + h * l);
+    System.out.println("Surface area of cuboid: " + area);
+  }
+}
+  </pre>
+  <div class="output">Output: Surface area based on dimensions</div>
+</div>
+
+<!-- 39 -->
+<div class="program">
+  <h2>39. Find surface area of cylinder</h2>
+  <pre>
+import java.util.Scanner;
+
+public class SurfaceCylinder {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter radius: ");
+    double r = sc.nextDouble();
+    System.out.print("Enter height: ");
+    double h = sc.nextDouble();
+    double area = 2 * Math.PI * r * (r + h);
+    System.out.println("Surface area of cylinder: " + area);
+  }
+}
+  </pre>
+  <div class="output">Output: Surface area based on radius and height</div>
+</div>
+
+<!-- 40 -->
+<div class="program">
+  <h2>40. Find surface area of cube</h2>
+  <pre>
+import java.util.Scanner;
+
+public class SurfaceCube {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter side length: ");
+    double a = sc.nextDouble();
+    double area = 6 * a * a;
+    System.out.println("Surface area of cube: " + area);
+  }
+}
+  </pre>
+  <div class="output">Output: Surface area based on side length</div>
+</div>
+<!-- 41 -->
+<div class="program">
+  <h2>41. Calculate average marks</h2>
+  <pre>
+import java.util.Scanner;
+
+public class AverageMarks {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int total = 0;
+    System.out.println("Enter marks for 5 subjects:");
+    for (int i = 1; i <= 5; i++) {
+      System.out.print("Subject " + i + ": ");
+      total += sc.nextInt();
+    }
+    double average = total / 5.0;
+    System.out.println("Average Marks: " + average);
+  }
+}
+  </pre>
+  <div class="output">Output: Average based on input marks</div>
+</div>
+
+<!-- 42 -->
+<div class="program">
+  <h2>42. Check vowel or consonant</h2>
+  <pre>
+import java.util.Scanner;
+
+public class VowelConsonant {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a character: ");
+    char ch = sc.next().toLowerCase().charAt(0);
+
+    if ("aeiou".indexOf(ch) != -1)
+      System.out.println("Vowel");
+    else
+      System.out.println("Consonant");
+  }
+}
+  </pre>
+  <div class="output">Output: Vowel or Consonant</div>
+</div>
+
+<!-- 43 -->
+<div class="program">
+  <h2>43. Sum of N numbers</h2>
+  <pre>
+import java.util.Scanner;
+
+public class SumN {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter N: ");
+    int n = sc.nextInt();
+    int sum = 0;
+
+    for (int i = 1; i <= n; i++)
+      sum += i;
+
+    System.out.println("Sum: " + sum);
+  }
+}
+  </pre>
+  <div class="output">Output: Sum based on input N</div>
+</div>
+
+<!-- 44 -->
+<div class="program">
+  <h2>44. Find factorial of any number</h2>
+  <pre>
+import java.util.Scanner;
+
+public class Factorial {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a number: ");
+    int n = sc.nextInt();
+    long fact = 1;
+
+    for (int i = 1; i <= n; i++)
+      fact *= i;
+
+    System.out.println("Factorial: " + fact);
+  }
+}
+  </pre>
+  <div class="output">Output: Factorial based on input</div>
+</div>
+
+<!-- 45 -->
+<div class="program">
+  <h2>45. Calculate electricity bill</h2>
+  <pre>
+import java.util.Scanner;
+
+public class ElectricityBill {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter units consumed: ");
+    int units = sc.nextInt();
+    double bill = 0;
+
+    if (units <= 50)
+      bill = units * 3.5;
+    else if (units <= 150)
+      bill = 50 * 3.5 + (units - 50) * 4;
+    else
+      bill = 50 * 3.5 + 100 * 4 + (units - 150) * 5;
+
+    System.out.println("Electricity Bill: ₹" + bill);
+  }
+}
+  </pre>
+  <div class="output">Output: Electricity bill based on units</div>
+</div>
+
+<!-- 46 -->
+<div class="program">
+  <h2>46. Calculate CGPA Percentage</h2>
+  <pre>
+import java.util.Scanner;
+
+public class CGPACalculator {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter CGPA: ");
+    double cgpa = sc.nextDouble();
+    double percentage = cgpa * 9.5;
+    System.out.println("Percentage: " + percentage + "%");
+  }
+}
+  </pre>
+  <div class="output">Output: Percentage based on CGPA</div>
+</div>
+
+<!-- 47 -->
+<div class="program">
+  <h2>47. Calculate compound interest</h2>
+  <pre>
+import java.util.Scanner;
+
+public class CompoundInterest {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter principal: ");
+    double p = sc.nextDouble();
+    System.out.print("Enter rate: ");
+    double r = sc.nextDouble();
+    System.out.print("Enter time (years): ");
+    int t = sc.nextInt();
+
+    double amount = p * Math.pow((1 + r / 100), t);
+    double ci = amount - p;
+
+    System.out.println("Compound Interest: " + ci);
+  }
+}
+  </pre>
+  <div class="output">Output: Compound interest based on input</div>
+</div>
+
+<!-- 48 -->
+<div class="program">
+  <h2>48. Calculate batting average</h2>
+  <pre>
+import java.util.Scanner;
+
+public class BattingAverage {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter total runs: ");
+    int runs = sc.nextInt();
+    System.out.print("Enter number of times out: ");
+    int outs = sc.nextInt();
+
+    double average = (double) runs / outs;
+    System.out.println("Batting Average: " + average);
+  }
+}
+  </pre>
+  <div class="output">Output: Batting average based on input</div>
+</div>
+
+<!-- 49 -->
+<div class="program">
+  <h2>49. Calculate commission percentage</h2>
+  <pre>
+import java.util.Scanner;
+
+public class CommissionCalculator {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter total sales: ");
+    double sales = sc.nextDouble();
+    System.out.print("Enter commission rate (%): ");
+    double rate = sc.nextDouble();
+
+    double commission = (sales * rate) / 100;
+    System.out.println("Commission: ₹" + commission);
+  }
+}
+  </pre>
+  <div class="output">Output: Commission based on input</div>
+</div>
+
+<!-- 50 -->
+<div class="program">
+  <h2>50. Find distance between two points</h2>
+  <pre>
+import java.util.Scanner;
+
+public class DistanceBetweenPoints {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter x1 and y1: ");
+    double x1 = sc.nextDouble();
+    double y1 = sc.nextDouble();
+    System.out.print("Enter x2 and y2: ");
+    double x2 = sc.nextDouble();
+    double y2 = sc.nextDouble();
+
+    double distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+    System.out.println("Distance: " + distance);
+  }
+}
+  </pre>
+  <div class="output">Output: Distance based on coordinates</div>
+</div>
+<!-- 51 -->
+<div class="program">
+  <h2>51. Calculate power of a number</h2>
+  <pre>
+import java.util.Scanner;
+
+public class PowerCalculator {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter base: ");
+    int base = sc.nextInt();
+    System.out.print("Enter exponent: ");
+    int exp = sc.nextInt();
+
+    double result = Math.pow(base, exp);
+    System.out.println("Result: " + result);
+  }
+}
+  </pre>
+  <div class="output">Output: Result based on input</div>
+</div>
+
+<!-- 52 -->
+<div class="program">
+  <h2>52. Print greatest of three numbers</h2>
+  <pre>
+import java.util.Scanner;
+
+public class GreatestOfThree {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter three numbers: ");
+    int a = sc.nextInt();
+    int b = sc.nextInt();
+    int c = sc.nextInt();
+
+    int max = (a > b) ? (a > c ? a : c) : (b > c ? b : c);
+    System.out.println("Greatest: " + max);
+  }
+}
+  </pre>
+  <div class="output">Output: Greatest number based on input</div>
+</div>
+
+<!-- 53 -->
+<div class="program">
+  <h2>53. Find number of days in a month</h2>
+  <pre>
+import java.util.Scanner;
+
+public class DaysInMonth {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter month number (1-12): ");
+    int month = sc.nextInt();
+
+    switch (month) {
+      case 2: System.out.println("28 or 29 days"); break;
+      case 4: case 6: case 9: case 11:
+        System.out.println("30 days"); break;
+      default:
+        System.out.println("31 days");
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Days based on month input</div>
+</div>
+
+<!-- 54 -->
+<div class="program">
+  <h2>54. Test if number is positive or negative</h2>
+  <pre>
+import java.util.Scanner;
+
+public class PositiveNegative {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a number: ");
+    int num = sc.nextInt();
+
+    if (num > 0)
+      System.out.println("Positive");
+    else if (num < 0)
+      System.out.println("Negative");
+    else
+      System.out.println("Zero");
+  }
+}
+  </pre>
+  <div class="output">Output: Positive, Negative, or Zero</div>
+</div>
+
+<!-- 55 -->
+<div class="program">
+  <h2>55. Print day of week from number (1–7)</h2>
+  <pre>
+import java.util.Scanner;
+
+public class DayOfWeek {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter day number (1-7): ");
+    int day = sc.nextInt();
+
+    switch (day) {
+      case 1: System.out.println("Sunday"); break;
+      case 2: System.out.println("Monday"); break;
+      case 3: System.out.println("Tuesday"); break;
+      case 4: System.out.println("Wednesday"); break;
+      case 5: System.out.println("Thursday"); break;
+      case 6: System.out.println("Friday"); break;
+      case 7: System.out.println("Saturday"); break;
+      default: System.out.println("Invalid day");
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Day name based on input</div>
+</div>
+
+<!-- 56 -->
+<div class="program">
+  <h2>56. Check if year is a leap year</h2>
+  <pre>
+import java.util.Scanner;
+
+public class LeapYear {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a year: ");
+    int year = sc.nextInt();
+
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+      System.out.println("Leap year");
+    else
+      System.out.println("Not a leap year");
+  }
+}
+  </pre>
+  <div class="output">Output: Leap year or not</div>
+</div>
+
+<!-- 57 -->
+<div class="program">
+  <h2>57. Input 5 numbers and find sum and average</h2>
+  <pre>
+import java.util.Scanner;
+
+public class SumAndAverage {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int sum = 0;
+    System.out.println("Enter 5 numbers:");
+    for (int i = 0; i < 5; i++) {
+      sum += sc.nextInt();
+    }
+    double avg = sum / 5.0;
+    System.out.println("Sum: " + sum);
+    System.out.println("Average: " + avg);
+  }
+}
+  </pre>
+  <div class="output">Output: Sum and average based on input</div>
+</div>
+
+<!-- 58 -->
+<div class="program">
+  <h2>58. Display first 5 natural numbers</h2>
+  <pre>
+public class FirstFiveNaturals {
+  public static void main(String[] args) {
+    for (int i = 1; i <= 5; i++) {
+      System.out.println(i);
+    }
+  }
+}
+  </pre>
+  <div class="output">Output:<br>1<br>2<br>3<br>4<br>5</div>
+</div>
+
+<!-- 59 -->
+<div class="program">
+  <h2>59. Check vowel or consonant (again)</h2>
+  <pre>
+import java.util.Scanner;
+
+public class VowelCheck {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a character: ");
+    char ch = sc.next().toLowerCase().charAt(0);
+
+    if ("aeiou".indexOf(ch) != -1)
+      System.out.println("Vowel");
+    else
+      System.out.println("Consonant");
+  }
+}
+  </pre>
+  <div class="output">Output: Vowel or Consonant</div>
+</div>
+
+<!-- 60 -->
+<div class="program">
+  <h2>60. Display cube of numbers up to given integer</h2>
+  <pre>
+import java.util.Scanner;
+
+public class CubeSeries {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a number: ");
+    int n = sc.nextInt();
+
+    for (int i = 1; i <= n; i++) {
+      System.out.println("Number is: " + i + " and cube is: " + (i * i * i));
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Cubes from 1 to n</div>
+</div>
+<!-- 61 -->
+<div class="program">
+  <h2>61. Display n terms of odd natural numbers and their sum</h2>
+  <pre>
+import java.util.Scanner;
+
+public class OddSeriesSum {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter number of terms: ");
+    int n = sc.nextInt();
+    int sum = 0;
+
+    System.out.println("Odd numbers:");
+    for (int i = 1, count = 0; count < n; i += 2, count++) {
+      System.out.println(i);
+      sum += i;
+    }
+
+    System.out.println("Sum: " + sum);
+  }
+}
+  </pre>
+  <div class="output">Output: Odd numbers and their sum</div>
+</div>
+
+<!-- 62 -->
+<div class="program">
+  <h2>62. Display multiplication table of a given integer</h2>
+  <pre>
+import java.util.Scanner;
+
+public class MultiplicationTable {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a number: ");
+    int num = sc.nextInt();
+
+    for (int i = 1; i <= 10; i++) {
+      System.out.println(num + " x " + i + " = " + (num * i));
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Multiplication table from 1 to 10</div>
+</div>
+
+<!-- 63 -->
+<div class="program">
+  <h2>63. Check if number is negative, zero, or positive</h2>
+  <pre>
+import java.util.Scanner;
+
+public class NumberCheck {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a number: ");
+    int num = sc.nextInt();
+
+    if (num > 0)
+      System.out.println("Positive");
+    else if (num < 0)
+      System.out.println("Negative");
+    else
+      System.out.println("Zero");
+  }
+}
+  </pre>
+  <div class="output">Output: Positive, Negative, or Zero</div>
+</div>
+
+<!-- 64 -->
+<div class="program">
+  <h2>64. Count number of digits in a positive integer</h2>
+  <pre>
+import java.util.Scanner;
+
+public class DigitCounter {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a positive integer: ");
+    int num = sc.nextInt();
+    int count = 0;
+
+    while (num != 0) {
+      count++;
+      num /= 10;
+    }
+
+    System.out.println("Number of digits: " + count);
+  }
+}
+  </pre>
+  <div class="output">Output: Digit count based on input</div>
+</div>
+
+<!-- 65 -->
+<div class="program">
+  <h2>65. Check if all three numbers are equal</h2>
+  <pre>
+import java.util.Scanner;
+
+public class AllEqualCheck {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter three numbers: ");
+    int a = sc.nextInt();
+    int b = sc.nextInt();
+    int c = sc.nextInt();
+
+    if (a == b && b == c)
+      System.out.println("All numbers are equal");
+    else
+      System.out.println("Numbers are not equal");
+  }
+}
+  </pre>
+  <div class="output">Output: Equality check result</div>
+</div>
+
+<!-- 66 -->
+<div class="program">
+  <h2>66. Check if numbers are in increasing or decreasing order</h2>
+  <pre>
+import java.util.Scanner;
+
+public class OrderCheck {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter three numbers: ");
+    int a = sc.nextInt();
+    int b = sc.nextInt();
+    int c = sc.nextInt();
+
+    if (a < b && b < c)
+      System.out.println("Increasing order");
+    else if (a > b && b > c)
+      System.out.println("Decreasing order");
+    else
+      System.out.println("Neither increasing nor decreasing");
+  }
+}
+  </pre>
+  <div class="output">Output: Order check result</div>
+</div>
+
+<!-- 67 -->
+<div class="program">
+  <h2>67. Determine student’s grade</h2>
+  <pre>
+import java.util.Scanner;
+
+public class GradeCalculator {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter marks: ");
+    int marks = sc.nextInt();
+
+    if (marks >= 90)
+      System.out.println("Grade: A");
+    else if (marks >= 80)
+      System.out.println("Grade: B");
+    else if (marks >= 70)
+      System.out.println("Grade: C");
+    else if (marks >= 60)
+      System.out.println("Grade: D");
+    else
+      System.out.println("Grade: F");
+  }
+}
+  </pre>
+  <div class="output">Output: Grade based on marks</div>
+</div>
+
+<!-- 68 -->
+<div class="program">
+  <h2>68. Create a simple calculator</h2>
+  <pre>
+import java.util.Scanner;
+
+public class SimpleCalculator {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter first number: ");
+    double a = sc.nextDouble();
+    System.out.print("Enter second number: ");
+    double b = sc.nextDouble();
+    System.out.print("Enter operator (+, -, *, /): ");
+    char op = sc.next().charAt(0);
+
+    switch (op) {
+      case '+': System.out.println("Result: " + (a + b)); break;
+      case '-': System.out.println("Result: " + (a - b)); break;
+      case '*': System.out.println("Result: " + (a * b)); break;
+      case '/': System.out.println("Result: " + (a / b)); break;
+      default: System.out.println("Invalid operator");
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Result based on operation</div>
+</div>
+
+<!-- 69 -->
+<div class="program">
+  <h2>69. Concatenate two strings</h2>
+  <pre>
+public class StringConcatenate {
+  public static void main(String[] args) {
+    String s1 = "Hello";
+    String s2 = "World";
+    String result = s1 + " " + s2;
+    System.out.println("Concatenated: " + result);
+  }
+}
+  </pre>
+  <div class="output">Output: Concatenated: Hello World</div>
+</div>
+
+<!-- 70 -->
+<div class="program">
+  <h2>70. Convert all characters in a string to lowercase</h2>
+  <pre>
+public class ToLowerCase {
+  public static void main(String[] args) {
+    String str = "JAVA Programming";
+    String lower = str.toLowerCase();
+    System.out.println("Lowercase: " + lower);
+  }
+}
+  </pre>
+  <div class="output">Output: Lowercase: java programming</div>
+</div>
+<!-- 71 -->
+<div class="program">
+  <h2>71. Convert all characters in a string to uppercase</h2>
+  <pre>
+public class ToUpperCase {
+  public static void main(String[] args) {
+    String str = "java programming";
+    String upper = str.toUpperCase();
+    System.out.println("Uppercase: " + upper);
+  }
+}
+  </pre>
+  <div class="output">Output: Uppercase: JAVA PROGRAMMING</div>
+</div>
+
+<!-- 72 -->
+<div class="program">
+  <h2>72. Trim a string (remove whitespaces)</h2>
+  <pre>
+public class TrimString {
+  public static void main(String[] args) {
+    String str = "   Hello Java   ";
+    String trimmed = str.trim();
+    System.out.println("Trimmed: '" + trimmed + "'");
+  }
+}
+  </pre>
+  <div class="output">Output: Trimmed: 'Hello Java'</div>
+</div>
+
+<!-- 73 -->
+<div class="program">
+  <h2>73. Get a substring between two specified positions</h2>
+  <pre>
+public class SubstringExample {
+  public static void main(String[] args) {
+    String str = "Java Programming";
+    String sub = str.substring(5, 16);
+    System.out.println("Substring: " + sub);
+  }
+}
+  </pre>
+  <div class="output">Output: Substring: Programming</div>
+</div>
+
+<!-- 74 -->
+<div class="program">
+  <h2>74. Replace all 'd' characters with 'f'</h2>
+  <pre>
+public class ReplaceCharacter {
+  public static void main(String[] args) {
+    String str = "doodle";
+    String replaced = str.replace('d', 'f');
+    System.out.println("Replaced: " + replaced);
+  }
+}
+  </pre>
+  <div class="output">Output: Replaced: foofle</div>
+</div>
+
+<!-- 75 -->
+<div class="program">
+  <h2>75. Get the length of a given string</h2>
+  <pre>
+public class StringLength {
+  public static void main(String[] args) {
+    String str = "Java";
+    int length = str.length();
+    System.out.println("Length: " + length);
+  }
+}
+  </pre>
+  <div class="output">Output: Length: 4</div>
+</div>
+
+<!-- 76 -->
+<div class="program">
+  <h2>76. Print current date and time in specified format</h2>
+  <pre>
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DateTimeFormat {
+  public static void main(String[] args) {
+    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+    Date date = new Date();
+    System.out.println("Current Date & Time: " + formatter.format(date));
+  }
+}
+  </pre>
+  <div class="output">Output: Current Date & Time: [formatted output]</div>
+</div>
+
+<!-- 77 -->
+<div class="program">
+  <h2>77. Get character at given index within a string</h2>
+  <pre>
+public class CharAtIndex {
+  public static void main(String[] args) {
+    String str = "Java";
+    char ch = str.charAt(2);
+    System.out.println("Character at index 2: " + ch);
+  }
+}
+  </pre>
+  <div class="output">Output: Character at index 2: v</div>
+</div>
+
+<!-- 78 -->
+<div class="program">
+  <h2>78. Remove a particular character from a string</h2>
+  <pre>
+public class RemoveCharacter {
+  public static void main(String[] args) {
+    String str = "Java";
+    String result = str.replace("a", "");
+    System.out.println("After removal: " + result);
+  }
+}
+  </pre>
+  <div class="output">Output: After removal: Jv</div>
+</div>
+
+<!-- 79 -->
+<div class="program">
+  <h2>79. Reverse a string</h2>
+  <pre>
+public class ReverseString {
+  public static void main(String[] args) {
+    String str = "Java";
+    String reversed = new StringBuilder(str).reverse().toString();
+    System.out.println("Reversed: " + reversed);
+  }
+}
+  </pre>
+  <div class="output">Output: Reversed: avaJ</div>
+</div>
+
+<!-- 80 -->
+<div class="program">
+  <h2>80. Remove HTML tags from a string</h2>
+  <pre>
+public class RemoveHTML {
+  public static void main(String[] args) {
+    String html = "<p>Hello <b>Java</b></p>";
+    String plain = html.replaceAll("<[^>]*>", "");
+    System.out.println("Plain text: " + plain);
+  }
+}
+  </pre>
+  <div class="output">Output: Plain text: Hello Java</div>
+</div>
+<!-- 81 -->
+<div class="program">
+  <h2>81. Count total number of lines from a string</h2>
+  <pre>
+public class LineCounter {
+  public static void main(String[] args) {
+    String str = "Java\nis\nawesome";
+    int lines = str.split("\n").length;
+    System.out.println("Total lines: " + lines);
+  }
+}
+  </pre>
+  <div class="output">Output: Total lines: 3</div>
+</div>
+
+<!-- 82 -->
+<div class="program">
+  <h2>82. Sum values of an array</h2>
+  <pre>
+public class ArraySum {
+  public static void main(String[] args) {
+    int[] arr = {1, 2, 3, 4, 5};
+    int sum = 0;
+    for (int num : arr) sum += num;
+    System.out.println("Sum: " + sum);
+  }
+}
+  </pre>
+  <div class="output">Output: Sum: 15</div>
+</div>
+
+<!-- 83 -->
+<div class="program">
+  <h2>83. Find index of an array element</h2>
+  <pre>
+public class FindIndex {
+  public static void main(String[] args) {
+    int[] arr = {10, 20, 30, 40, 50};
+    int target = 30;
+    int index = -1;
+
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[i] == target) {
+        index = i;
+        break;
+      }
+    }
+
+    System.out.println("Index of " + target + ": " + index);
+  }
+}
+  </pre>
+  <div class="output">Output: Index of 30: 2</div>
+</div>
+
+<!-- 84 -->
+<div class="program">
+  <h2>84. Calculate average value of array elements</h2>
+  <pre>
+public class ArrayAverage {
+  public static void main(String[] args) {
+    int[] arr = {10, 20, 30, 40, 50};
+    int sum = 0;
+    for (int num : arr) sum += num;
+    double avg = sum / (double) arr.length;
+    System.out.println("Average: " + avg);
+  }
+}
+  </pre>
+  <div class="output">Output: Average: 30.0</div>
+</div>
+
+<!-- 85 -->
+<div class="program">
+  <h2>85. Test if array contains a specific value</h2>
+  <pre>
+public class ContainsValue {
+  public static void main(String[] args) {
+    int[] arr = {1, 2, 3, 4, 5};
+    int target = 3;
+    boolean found = false;
+
+    for (int num : arr) {
+      if (num == target) {
+        found = true;
+        break;
+      }
+    }
+
+    System.out.println("Contains " + target + "? " + found);
+  }
+}
+  </pre>
+  <div class="output">Output: Contains 3? true</div>
+</div>
+
+<!-- 86 -->
+<div class="program">
+  <h2>86. Find maximum and minimum value of an array</h2>
+  <pre>
+public class MaxMinArray {
+  public static void main(String[] args) {
+    int[] arr = {5, 2, 9, 1, 7};
+    int max = arr[0], min = arr[0];
+
+    for (int num : arr) {
+      if (num > max) max = num;
+      if (num < min) min = num;
+    }
+
+    System.out.println("Max: " + max);
+    System.out.println("Min: " + min);
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Max: 9<br>Min: 1</div>
+</div>
+
+<!-- 87 -->
+<div class="program">
+  <h2>87. Insert an element at specific position in array</h2>
+  <pre>
+import java.util.Arrays;
+
+public class InsertElement {
+  public static void main(String[] args) {
+    int[] arr = {1, 2, 4, 5};
+    int pos = 2;
+    int val = 3;
+    int[] newArr = new int[arr.length + 1];
+
+    for (int i = 0, j = 0; i < newArr.length; i++) {
+      if (i == pos) newArr[i] = val;
+      else newArr[i] = arr[j++];
+    }
+
+    System.out.println("Updated Array: " + Arrays.toString(newArr));
+  }
+}
+  </pre>
+  <div class="output">Output: Updated Array: [1, 2, 3, 4, 5]</div>
+</div>
+
+<!-- 88 -->
+<div class="program">
+  <h2>88. Reverse an array of integers</h2>
+  <pre>
+import java.util.Arrays;
+
+public class ReverseArray {
+  public static void main(String[] args) {
+    int[] arr = {1, 2, 3, 4, 5};
+    for (int i = 0, j = arr.length - 1; i < j; i++, j--) {
+      int temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+    }
+    System.out.println("Reversed Array: " + Arrays.toString(arr));
+  }
+}
+  </pre>
+  <div class="output">Output: Reversed Array: [5, 4, 3, 2, 1]</div>
+</div>
+
+<!-- 89 -->
+<div class="program">
+  <h2>89. Find common elements between two arrays</h2>
+  <pre>
+import java.util.HashSet;
+
+public class CommonElements {
+  public static void main(String[] args) {
+    int[] a = {1, 2, 3, 4};
+    int[] b = {3, 4, 5, 6};
+    HashSet<Integer> set = new HashSet<>();
+
+    for (int i : a) {
+      for (int j : b) {
+        if (i == j) set.add(i);
+      }
+    }
+
+    System.out.println("Common Elements: " + set);
+  }
+}
+  </pre>
+  <div class="output">Output: Common Elements: [3, 4]</div>
+</div>
+
+<!-- 90 -->
+<div class="program">
+  <h2>90. Find duplicate values in an array</h2>
+  <pre>
+import java.util.HashSet;
+
+public class DuplicateFinder {
+  public static void main(String[] args) {
+    int[] arr = {1, 2, 3, 2, 4, 3};
+    HashSet<Integer> seen = new HashSet<>();
+    HashSet<Integer> duplicates = new HashSet<>();
+
+    for (int num : arr) {
+      if (!seen.add(num)) duplicates.add(num);
+    }
+
+    System.out.println("Duplicates: " + duplicates);
+  }
+}
+  </pre>
+  <div class="output">Output: Duplicates: [2, 3]</div>
+</div>
+<!-- 91 -->
+<div class="program">
+  <h2>91. Convert an array to ArrayList</h2>
+  <pre>
+import java.util.*;
+
+public class ArrayToList {
+  public static void main(String[] args) {
+    String[] arr = {"Java", "Python", "C++"};
+    List<String> list = Arrays.asList(arr);
+    System.out.println("ArrayList: " + list);
+  }
+}
+  </pre>
+  <div class="output">Output: ArrayList: [Java, Python, C++]</div>
+</div>
+
+<!-- 92 -->
+<div class="program">
+  <h2>92. Add two matrices of the same size</h2>
+  <pre>
+public class MatrixAddition {
+  public static void main(String[] args) {
+    int[][] a = {{1, 2}, {3, 4}};
+    int[][] b = {{5, 6}, {7, 8}};
+    int[][] sum = new int[2][2];
+
+    for (int i = 0; i < 2; i++) {
+      for (int j = 0; j < 2; j++) {
+        sum[i][j] = a[i][j] + b[i][j];
+      }
+    }
+
+    System.out.println("Sum Matrix:");
+    for (int[] row : sum) {
+      for (int val : row)
+        System.out.print(val + " ");
+      System.out.println();
+    }
+  }
+}
+  </pre>
+  <div class="output">Output:<br>6 8<br>10 12</div>
+</div>
+
+<!-- 93 -->
+<div class="program">
+  <h2>93. Find second largest number from array</h2>
+  <pre>
+public class SecondLargest {
+  public static void main(String[] args) {
+    int[] arr = {10, 20, 25, 15, 5};
+    int max = Integer.MIN_VALUE, second = Integer.MIN_VALUE;
+
+    for (int num : arr) {
+      if (num > max) {
+        second = max;
+        max = num;
+      } else if (num > second && num != max) {
+        second = num;
+      }
+    }
+
+    System.out.println("Second Largest: " + second);
+  }
+}
+  </pre>
+  <div class="output">Output: Second Largest: 20</div>
+</div>
+
+<!-- 94 -->
+<div class="program">
+  <h2>94. Find second lowest number from array</h2>
+  <pre>
+public class SecondLowest {
+  public static void main(String[] args) {
+    int[] arr = {10, 20, 5, 15, 25};
+    int min = Integer.MAX_VALUE, second = Integer.MAX_VALUE;
+
+    for (int num : arr) {
+      if (num < min) {
+        second = min;
+        min = num;
+      } else if (num < second && num != min) {
+        second = num;
+      }
+    }
+
+    System.out.println("Second Lowest: " + second);
+  }
+}
+  </pre>
+  <div class="output">Output: Second Lowest: 10</div>
+</div>
+
+<!-- 95 -->
+<div class="program">
+  <h2>95. Count even and odd integers in array</h2>
+  <pre>
+public class EvenOddCount {
+  public static void main(String[] args) {
+    int[] arr = {1, 2, 3, 4, 5, 6};
+    int even = 0, odd = 0;
+
+    for (int num : arr) {
+      if (num % 2 == 0) even++;
+      else odd++;
+    }
+
+    System.out.println("Even: " + even);
+    System.out.println("Odd: " + odd);
+  }
+}
+  </pre>
+  <div class="output">Output:<br>Even: 3<br>Odd: 3</div>
+</div>
+
+<!-- 96 -->
+<div class="program">
+  <h2>96. Difference between largest and smallest values in array</h2>
+  <pre>
+public class DifferenceMaxMin {
+  public static void main(String[] args) {
+    int[] arr = {10, 5, 20, 8};
+    int max = arr[0], min = arr[0];
+
+    for (int num : arr) {
+      if (num > max) max = num;
+      if (num < min) min = num;
+    }
+
+    int diff = max - min;
+    System.out.println("Difference: " + diff);
+  }
+}
+  </pre>
+  <div class="output">Output: Difference: 15</div>
+</div>
+
+<!-- 97 -->
+<div class="program">
+  <h2>97. Segregate 0s and 1s in array</h2>
+  <pre>
+import java.util.Arrays;
+
+public class SegregateZeroOne {
+  public static void main(String[] args) {
+    int[] arr = {0, 1, 0, 1, 1, 0};
+    Arrays.sort(arr);
+    System.out.println("Segregated: " + Arrays.toString(arr));
+  }
+}
+  </pre>
+  <div class="output">Output: Segregated: [0, 0, 0, 1, 1, 1]</div>
+</div>
+
+<!-- 98 -->
+<div class="program">
+  <h2>98. Cyclically rotate array clockwise by one</h2>
+  <pre>
+import java.util.Arrays;
+
+public class RotateArray {
+  public static void main(String[] args) {
+    int[] arr = {1, 2, 3, 4, 5};
+    int last = arr[arr.length - 1];
+
+    for (int i = arr.length - 1; i > 0; i--) {
+      arr[i] = arr[i - 1];
+    }
+    arr[0] = last;
+
+    System.out.println("Rotated: " + Arrays.toString(arr));
+  }
+}
+  </pre>
+  <div class="output">Output: Rotated: [5, 1, 2, 3, 4]</div>
+</div>
+
+<!-- 99 -->
+<div class="program">
+  <h2>99. Print all unique elements in array</h2>
+  <pre>
+import java.util.*;
+
+public class UniqueElements {
+  public static void main(String[] args) {
+    int[] arr = {1, 2, 2, 3, 4, 4, 5};
+    HashMap<Integer, Integer> map = new HashMap<>();
+
+    for (int num : arr)
+      map.put(num, map.getOrDefault(num, 0) + 1);
+
+    System.out.println("Unique Elements:");
+    for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+      if (entry.getValue() == 1)
+        System.out.println(entry.getKey());
+    }
+  }
+}
+  </pre>
+  <div class="output">Output:<br>1<br>3<br>5</div>
+</div>
+
+<!-- 100 -->
+<div class="program">
+  <h2>100. Sort array in ascending order</h2>
+  <pre>
+import java.util.Arrays;
+
+public class SortAscending {
+  public static void main(String[] args) {
+    int[] arr = {5, 2, 8, 1, 3};
+    Arrays.sort(arr);
+    System.out.println("Sorted Ascending: " + Arrays.toString(arr));
+  }
+}
+  </pre>
+  <div class="output">Output: Sorted Ascending: [1, 2, 3, 5, 8]</div>
+</div>
+<!-- 101 -->
+<div class="program">
+  <h2>101. Sort array in descending order</h2>
+  <pre>
+import java.util.Arrays;
+import java.util.Collections;
+
+public class SortDescending {
+  public static void main(String[] args) {
+    Integer[] arr = {5, 2, 8, 1, 3};
+    Arrays.sort(arr, Collections.reverseOrder());
+    System.out.println("Sorted Descending: " + Arrays.toString(arr));
+  }
+}
+  </pre>
+  <div class="output">Output: Sorted Descending: [8, 5, 3, 2, 1]</div>
+</div>
+
+<!-- 102 -->
+<div class="program">
+  <h2>102. Sort names in alphabetical order</h2>
+  <pre>
+import java.util.Arrays;
+
+public class SortNames {
+  public static void main(String[] args) {
+    String[] names = {"Zara", "Ankit", "Mohan", "Bina"};
+    Arrays.sort(names);
+    System.out.println("Sorted Names: " + Arrays.toString(names));
+  }
+}
+  </pre>
+  <div class="output">Output: Sorted Names: [Ankit, Bina, Mohan, Zara]</div>
+</div>
+
+<!-- 103 -->
+<div class="program">
+  <h2>103. Display transpose of a matrix</h2>
+  <pre>
+public class TransposeMatrix {
+  public static void main(String[] args) {
+    int[][] matrix = {{1, 2}, {3, 4}};
+    int[][] transpose = new int[2][2];
+
+    for (int i = 0; i < 2; i++) {
+      for (int j = 0; j < 2; j++) {
+        transpose[i][j] = matrix[j][i];
+      }
+    }
+
+    System.out.println("Transpose:");
+    for (int[] row : transpose) {
+      for (int val : row)
+        System.out.print(val + " ");
+      System.out.println();
+    }
+  }
+}
+  </pre>
+  <div class="output">Output:<br>1 3<br>2 4</div>
+</div>
+
+<!-- 104 -->
+<div class="program">
+  <h2>104. Search key element in array</h2>
+  <pre>
+public class SearchKey {
+  public static void main(String[] args) {
+    int[] arr = {10, 20, 30, 40};
+    int key = 30;
+    boolean found = false;
+
+    for (int num : arr) {
+      if (num == key) {
+        found = true;
+        break;
+      }
+    }
+
+    System.out.println("Key found? " + found);
+  }
+}
+  </pre>
+  <div class="output">Output: Key found? true</div>
+</div>
+
+<!-- 105 -->
+<div class="program">
+  <h2>105. Accept marks and find total and percentage</h2>
+  <pre>
+import java.util.Scanner;
+
+public class MarksPercentage {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int total = 0;
+    System.out.println("Enter marks for 5 subjects:");
+    for (int i = 0; i < 5; i++) {
+      total += sc.nextInt();
+    }
+    double percentage = total / 5.0;
+    System.out.println("Total: " + total);
+    System.out.println("Percentage: " + percentage + "%");
+  }
+}
+  </pre>
+  <div class="output">Output: Total and percentage based on input</div>
+</div>
+
+<!-- 106 -->
+<div class="program">
+  <h2>106. Print numbers from 1 to 10 using loop</h2>
+  <pre>
+public class PrintOneToTen {
+  public static void main(String[] args) {
+    for (int i = 1; i <= 10; i++) {
+      System.out.println(i);
+    }
+  }
+}
+  </pre>
+  <div class="output">Output:<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10</div>
+</div>
+
+<!-- 107 -->
+<div class="program">
+  <h2>107. Calculate sum of first 10 natural numbers</h2>
+  <pre>
+public class SumFirstTen {
+  public static void main(String[] args) {
+    int sum = 0;
+    for (int i = 1; i <= 10; i++) {
+      sum += i;
+    }
+    System.out.println("Sum: " + sum);
+  }
+}
+  </pre>
+  <div class="output">Output: Sum: 55</div>
+</div>
+
+<!-- 108 -->
+<div class="program">
+  <h2>108. Print multiplication table of given number</h2>
+  <pre>
+import java.util.Scanner;
+
+public class TableGivenNumber {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter number: ");
+    int num = sc.nextInt();
+
+    for (int i = 1; i <= 10; i++) {
+      System.out.println(num + " x " + i + " = " + (num * i));
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Table from 1 to 10</div>
+</div>
+
+<!-- 109 -->
+<div class="program">
+  <h2>109. Find factorial value of number entered by user</h2>
+  <pre>
+import java.util.Scanner;
+
+public class FactorialInput {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter number: ");
+    int n = sc.nextInt();
+    long fact = 1;
+
+    for (int i = 1; i <= n; i++) {
+      fact *= i;
+    }
+
+    System.out.println("Factorial: " + fact);
+  }
+}
+  </pre>
+  <div class="output">Output: Factorial based on input</div>
+</div>
+
+<!-- 110 -->
+<div class="program">
+  <h2>110. Reverse digits of an integer</h2>
+  <pre>
+import java.util.Scanner;
+
+public class ReverseDigits {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter an integer: ");
+    int num = sc.nextInt();
+    int reversed = 0;
+
+    while (num != 0) {
+      reversed = reversed * 10 + num % 10;
+      num /= 10;
+    }
+
+    System.out.println("Reversed: " + reversed);
+  }
+}
+  </pre>
+  <div class="output">Output: Reversed digits based on input</div>
+</div>
+<!-- 111 -->
+<div class="program">
+  <h2>111. Sum of even and odd integers using loop</h2>
+  <pre>
+import java.util.Scanner;
+
+public class SumEvenOdd {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int evenSum = 0, oddSum = 0;
+
+    System.out.println("Enter integers (0 to stop):");
+    while (true) {
+      int num = sc.nextInt();
+      if (num == 0) break;
+      if (num % 2 == 0) evenSum += num;
+      else oddSum += num;
+    }
+
+    System.out.println("Even Sum: " + evenSum);
+    System.out.println("Odd Sum: " + oddSum);
+  }
+}
+  </pre>
+  <div class="output">Output: Sums based on input</div>
+</div>
+
+<!-- 112 -->
+<div class="program">
+  <h2>112. Check if number is prime</h2>
+  <pre>
+import java.util.Scanner;
+
+public class PrimeCheck {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a number: ");
+    int num = sc.nextInt();
+    boolean isPrime = true;
+
+    if (num <= 1) isPrime = false;
+    else {
+      for (int i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i == 0) {
+          isPrime = false;
+          break;
+        }
+      }
+    }
+
+    System.out.println("Prime? " + isPrime);
+  }
+}
+  </pre>
+  <div class="output">Output: Prime? true/false</div>
+</div>
+
+<!-- 113 -->
+<div class="program">
+  <h2>113. Calculate HCF of two numbers using loop</h2>
+  <pre>
+import java.util.Scanner;
+
+public class HCFCalculator {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter two numbers: ");
+    int a = sc.nextInt();
+    int b = sc.nextInt();
+    int hcf = 1;
+
+    for (int i = 1; i <= Math.min(a, b); i++) {
+      if (a % i == 0 && b % i == 0)
+        hcf = i;
+    }
+
+    System.out.println("HCF: " + hcf);
+  }
+}
+  </pre>
+  <div class="output">Output: HCF based on input</div>
+</div>
+
+<!-- 114 -->
+<div class="program">
+  <h2>114. Count positives, negatives, and zeros</h2>
+  <pre>
+import java.util.Scanner;
+
+public class CountPNZ {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int pos = 0, neg = 0, zero = 0;
+
+    System.out.println("Enter numbers (type 'end' to stop):");
+    while (sc.hasNextInt()) {
+      int num = sc.nextInt();
+      if (num > 0) pos++;
+      else if (num < 0) neg++;
+      else zero++;
+    }
+
+    System.out.println("Positive: " + pos);
+    System.out.println("Negative: " + neg);
+    System.out.println("Zero: " + zero);
+  }
+}
+  </pre>
+  <div class="output">Output: Counts based on input</div>
+</div>
+
+<!-- 115 -->
+<div class="program">
+  <h2>115. Find largest and smallest numbers entered</h2>
+  <pre>
+import java.util.Scanner;
+
+public class MaxMinInput {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int max = Integer.MIN_VALUE;
+    int min = Integer.MAX_VALUE;
+
+    System.out.println("Enter numbers (type 'end' to stop):");
+    while (sc.hasNextInt()) {
+      int num = sc.nextInt();
+      if (num > max) max = num;
+      if (num < min) min = num;
+    }
+
+    System.out.println("Largest: " + max);
+    System.out.println("Smallest: " + min);
+  }
+}
+  </pre>
+  <div class="output">Output: Largest and smallest based on input</div>
+</div>
+
+<!-- 116 -->
+<div class="program">
+  <h2>116. Print all Armstrong numbers between 1 to 600</h2>
+  <pre>
+public class ArmstrongNumbers {
+  public static void main(String[] args) {
+    System.out.println("Armstrong numbers from 1 to 600:");
+    for (int num = 1; num <= 600; num++) {
+      int sum = 0, temp = num;
+      int digits = String.valueOf(num).length;
+
+      while (temp != 0) {
+        int digit = temp % 10;
+        sum += Math.pow(digit, digits);
+        temp /= 10;
+      }
+
+      if (sum == num)
+        System.out.println(num);
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Armstrong numbers between 1–600</div>
+</div>
+
+<!-- 117 -->
+<div class="program">
+  <h2>117. Count total number of notes in entered amount</h2>
+  <pre>
+import java.util.Scanner;
+
+public class NoteCounter {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter amount: ");
+    int amount = sc.nextInt();
+    int[] notes = {2000, 500, 200, 100, 50, 20, 10, 5, 2, 1};
+
+    for (int note : notes) {
+      int count = amount / note;
+      if (count > 0) {
+        System.out.println(note + " x " + count);
+        amount %= note;
+      }
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Note breakdown based on amount</div>
+</div>
+
+<!-- 118 -->
+<div class="program">
+  <h2>118. Print Fibonacci series of n terms</h2>
+  <pre>
+import java.util.Scanner;
+
+public class FibonacciSeries {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter number of terms: ");
+    int n = sc.nextInt();
+    int a = 0, b = 1;
+
+    System.out.println("Fibonacci Series:");
+    for (int i = 1; i <= n; i++) {
+      System.out.print(a + " ");
+      int next = a + b;
+      a = b;
+      b = next;
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Fibonacci series up to n terms</div>
+</div>
+
+<!-- 119 -->
+<div class="program">
+  <h2>119. Calculate sum of series: 1 + 1/2 + 1/3 + ... + 1/n</h2>
+  <pre>
+import java.util.Scanner;
+
+public class HarmonicSum {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter n: ");
+    int n = sc.nextInt();
+    double sum = 0;
+
+    for (int i = 1; i <= n; i++) {
+      sum += 1.0 / i;
+    }
+
+    System.out.println("Sum of series: " + sum);
+  }
+}
+  </pre>
+  <div class="output">Output: Harmonic sum based on n</div>
+</div>
+
+<!-- 120 -->
+<div class="program">
+  <h2>120. Method to compute average of three numbers</h2>
+  <pre>
+public class AverageMethod {
+  public static double average(int a, int b, int c) {
+    return (a + b + c) / 3.0;
+  }
+
+  public static void main(String[] args) {
+    double result = average(10, 20, 30);
+    System.out.println("Average: " + result);
+  }
+}
+  </pre>
+  <div class="output">Output: Average: 20.0</div>
+</div>
+<!-- 121 -->
+<div class="program">
+  <h2>121. Method to find smallest among three numbers</h2>
+  <pre>
+public class SmallestOfThree {
+  public static int smallest(int a, int b, int c) {
+    return Math.min(a, Math.min(b, c));
+  }
+
+  public static void main(String[] args) {
+    int result = smallest(12, 5, 8);
+    System.out.println("Smallest: " + result);
+  }
+}
+  </pre>
+  <div class="output">Output: Smallest: 5</div>
+</div>
+
+<!-- 122 -->
+<div class="program">
+  <h2>122. Method to count all words in a string</h2>
+  <pre>
+public class WordCounter {
+  public static int countWords(String str) {
+    String[] words = str.trim().split("\\s+");
+    return words.length;
+  }
+
+  public static void main(String[] args) {
+    String sentence = "Java is fun and powerful";
+    System.out.println("Word count: " + countWords(sentence));
+  }
+}
+  </pre>
+  <div class="output">Output: Word count: 5</div>
+</div>
+
+<!-- 123 -->
+<div class="program">
+  <h2>123. Method to count all vowels in a string</h2>
+  <pre>
+public class VowelCounter {
+  public static int countVowels(String str) {
+    int count = 0;
+    str = str.toLowerCase();
+    for (char ch : str.toCharArray()) {
+      if ("aeiou".indexOf(ch) != -1) count++;
+    }
+    return count;
+  }
+
+  public static void main(String[] args) {
+    String input = "Programming";
+    System.out.println("Vowels: " + countVowels(input));
+  }
+}
+  </pre>
+  <div class="output">Output: Vowels: 3</div>
+</div>
+
+<!-- 124 -->
+<div class="program">
+  <h2>124. Method to compute sum of digits in an integer</h2>
+  <pre>
+public class DigitSumMethod {
+  public static int sumDigits(int num) {
+    int sum = 0;
+    while (num != 0) {
+      sum += num % 10;
+      num /= 10;
+    }
+    return sum;
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Sum of digits: " + sumDigits(1234));
+  }
+}
+  </pre>
+  <div class="output">Output: Sum of digits: 10</div>
+</div>
+
+<!-- 125 -->
+<div class="program">
+  <h2>125. Method to check if year is leap year</h2>
+  <pre>
+public class LeapYearMethod {
+  public static boolean isLeap(int year) {
+    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Leap year? " + isLeap(2024));
+  }
+}
+  </pre>
+  <div class="output">Output: Leap year? true</div>
+</div>
+
+<!-- 126 -->
+<div class="program">
+  <h2>126. Method to calculate area of triangle</h2>
+  <pre>
+public class TriangleArea {
+  public static double area(double base, double height) {
+    return 0.5 * base * height;
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Area: " + area(10, 5));
+  }
+}
+  </pre>
+  <div class="output">Output: Area: 25.0</div>
+</div>
+
+<!-- 127 -->
+<div class="program">
+  <h2>127. Method to find area of pentagon</h2>
+  <pre>
+public class PentagonArea {
+  public static double area(double side) {
+    return (5 * side * side) / (4 * Math.tan(Math.PI / 5));
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Area: " + area(6));
+  }
+}
+  </pre>
+  <div class="output">Output: Area: 61.937... (approx)</div>
+</div>
+
+<!-- 128 -->
+<div class="program">
+  <h2>128. Method to check if number is even</h2>
+  <pre>
+public class EvenCheck {
+  public static boolean isEven(int num) {
+    return num % 2 == 0;
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Even? " + isEven(10));
+  }
+}
+  </pre>
+  <div class="output">Output: Even? true</div>
+</div>
+
+<!-- 129 -->
+<div class="program">
+  <h2>129. Method to check if number is palindrome</h2>
+  <pre>
+public class PalindromeMethod {
+  public static boolean isPalindrome(int num) {
+    int original = num, reversed = 0;
+    while (num != 0) {
+      reversed = reversed * 10 + num % 10;
+      num /= 10;
+    }
+    return original == reversed;
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Palindrome? " + isPalindrome(121));
+  }
+}
+  </pre>
+  <div class="output">Output: Palindrome? true</div>
+</div>
+
+<!-- 130 -->
+<div class="program">
+  <h2>130. Method to display prime numbers between 1 to 20</h2>
+  <pre>
+public class PrimeRange {
+  public static boolean isPrime(int n) {
+    if (n <= 1) return false;
+    for (int i = 2; i <= Math.sqrt(n); i++) {
+      if (n % i == 0) return false;
+    }
+    return true;
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Prime numbers from 1 to 20:");
+    for (int i = 1; i <= 20; i++) {
+      if (isPrime(i)) System.out.print(i + " ");
+    }
+  }
+}
+  </pre>
+  <div class="output">Output: Prime numbers from 1 to 20: 2 3 5 7 11 13 17 19</div>
+</div>
+<!-- 131 -->
+<div class="program">
+  <h2>131. Method to find GCD and LCM of Two Numbers</h2>
+  <pre>
+public class GCDLCM {
+  public static int gcd(int a, int b) {
+    while (b != 0) {
+      int temp = b;
+      b = a % b;
+      a = temp;
+    }
+    return a;
+  }
+
+  public static int lcm(int a, int b) {
+    return (a * b) / gcd(a, b);
+  }
+
+  public static void main(String[] args) {
+    int a = 12, b = 18;
+    System.out.println("GCD: " + gcd(a, b));
+    System.out.println("LCM: " + lcm(a, b));
+  }
+}
+  </pre>
+  <div class="output">Output: GCD: 6<br>LCM: 36</div>
+</div>
+
+<!-- 132 -->
+<div class="program">
+  <h2>132. Method to find factorial using recursion in Java</h2>
+  <pre>
+public class FactorialRecursion {
+  public static int factorial(int n) {
+    if (n == 0) return 1;
+    return n * factorial(n - 1);
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Factorial of 5: " + factorial(5));
+  }
+}
+  </pre>
+  <div class="output">Output: Factorial of 5: 120</div>
+</div>
+
+<!-- 133 -->
+<div class="program">
+  <h2>133. Program to reverse an integer number</h2>
+  <pre>
+public class ReverseInteger {
+  public static void main(String[] args) {
+    int num = 12345, reversed = 0;
+    while (num != 0) {
+      reversed = reversed * 10 + num % 10;
+      num /= 10;
+    }
+    System.out.println("Reversed number: " + reversed);
+  }
+}
+  </pre>
+  <div class="output">Output: Reversed number: 54321</div>
+</div>
+
+<!-- 134 -->
+<div class="program">
+  <h2>134. Program to round a float number to specified decimals</h2>
+  <pre>
+public class RoundFloat {
+  public static float roundToDecimals(float value, int decimals) {
+    float scale = (float) Math.pow(10, decimals);
+    return Math.round(value * scale) / scale;
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Rounded: " + roundToDecimals(3.14159f, 2));
+  }
+}
+  </pre>
+  <div class="output">Output: Rounded: 3.14</div>
+</div>
+
+<!-- 135 -->
+<div class="program">
+  <h2>135. Program to test if a double number is an integer</h2>
+  <pre>
+public class DoubleIsInteger {
+  public static boolean isInteger(double num) {
+    return num == Math.floor(num);
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Is integer? " + isInteger(10.0));
+    System.out.println("Is integer? " + isInteger(10.5));
+  }
+}
+  </pre>
+  <div class="output">Output: Is integer? true<br>Is integer? false</div>
+</div>
+
+<!-- 136 -->
+<div class="program">
+  <h2>136. Program to round up the result of integer division</h2>
+  <pre>
+public class RoundUpDivision {
+  public static int roundUpDiv(int a, int b) {
+    return (a + b - 1) / b;
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Rounded up division: " + roundUpDiv(10, 3));
+  }
+}
+  </pre>
+  <div class="output">Output: Rounded up division: 4</div>
+</div>
+
+<!-- 137 -->
+<div class="program">
+  <h2>137. Program to convert Roman number to an integer number</h2>
+  <pre>
+import java.util.*;
+
+public class RomanToInteger {
+  public static int romanToInt(String s) {
+    Map<Character, Integer> map = Map.of(
+      'I', 1, 'V', 5, 'X', 10, 'L', 50,
+      'C', 100, 'D', 500, 'M', 1000
+    );
+    int total = 0, prev = 0;
+    for (int i = s.length() - 1; i >= 0; i--) {
+      int curr = map.get(s.charAt(i));
+      if (curr < prev) total -= curr;
+      else total += curr;
+      prev = curr;
+    }
+    return total;
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Roman to Integer: " + romanToInt("XIV"));
+  }
+}
+  </pre>
+  <div class="output">Output: Roman to Integer: 14</div>
+</div>
+
+<!-- 138 -->
+<div class="program">
+  <h2>138. Program to convert a float value to absolute value</h2>
+  <pre>
+public class FloatAbsolute {
+  public static void main(String[] args) {
+    float value = -7.25f;
+    System.out.println("Absolute value: " + Math.abs(value));
+  }
+}
+  </pre>
+  <div class="output">Output: Absolute value: 7.25</div>
+</div>
+
+<!-- 139 -->
+<div class="program">
+  <h2>139. Program to accept a float value and return a rounded float value</h2>
+  <pre>
+public class RoundFloatValue {
+  public static float roundFloat(float value) {
+    return Math.round(value);
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Rounded float: " + roundFloat(5.67f));
+  }
+}
+  </pre>
+  <div class="output">Output: Rounded float: 6.0</div>
+</div>
+
+  </section>
+</body>
+</html>

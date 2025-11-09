@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Applet Programs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0b0b;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 30px 100px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(11,11,11,0.8);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 400;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff4d4d;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-left: 40px;
+    }
+
+    .login {
+      color: #ff4d4d;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .content {
+      padding: 140px 100px 100px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .program {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    }
+
+    .program h2 {
+      color: #ffb300;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+
+    pre {
+      background: #000;
+      color: #0f0;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .output {
+      background: #1b1b1b;
+      border-radius: 8px;
+      padding: 15px;
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .navbar {
+        padding: 20px 40px;
+      }
+      .content {
+        padding: 120px 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+
+  <section class="content">
+    <h1>Java AWT Programs</h1>
+
+    <!-- Program Blocks Start -->
+    <!-- Each block below follows your glowing modular format -->
+<!-- 1 -->
+<div class="program">
+  <h2>1. AWT Button with FlowLayout Manager</h2>
+  <pre>
+import java.awt.*;
+
+public class FlowButton {
+  public static void main(String[] args) {
+    Frame f = new Frame("FlowLayout Button");
+    f.setLayout(new FlowLayout());
+
+    Button b = new Button("Click Me");
+    f.add(b);
+
+    f.setSize(300, 200);
+    f.setVisible(true);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays a button centered using FlowLayout.</div>
+</div>
+
+<!-- 2 -->
+<div class="program">
+  <h2>2. AWT Button with Custom Layout</h2>
+  <pre>
+import java.awt.*;
+
+public class CustomButton {
+  public static void main(String[] args) {
+    Frame f = new Frame("Custom Layout Button");
+    f.setLayout(null);
+
+    Button b = new Button("Click Me");
+    b.setBounds(100, 100, 100, 30);
+    f.add(b);
+
+    f.setSize(300, 250);
+    f.setVisible(true);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays a button at custom position using setBounds.</div>
+</div>
+
+<!-- 3 -->
+<div class="program">
+  <h2>3. Multiple Buttons with BorderLayout Manager</h2>
+  <pre>
+import java.awt.*;
+
+public class BorderButtons {
+  public static void main(String[] args) {
+    Frame f = new Frame("BorderLayout Buttons");
+    f.setLayout(new BorderLayout());
+
+    f.add(new Button("North"), BorderLayout.NORTH);
+    f.add(new Button("South"), BorderLayout.SOUTH);
+    f.add(new Button("East"), BorderLayout.EAST);
+    f.add(new Button("West"), BorderLayout.WEST);
+    f.add(new Button("Center"), BorderLayout.CENTER);
+
+    f.setSize(400, 300);
+    f.setVisible(true);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays five buttons in BorderLayout regions.</div>
+</div>
+
+<!-- 4 -->
+<div class="program">
+  <h2>4. TextField with FlowLayout Manager</h2>
+  <pre>
+import java.awt.*;
+
+public class FlowTextField {
+  public static void main(String[] args) {
+    Frame f = new Frame("FlowLayout TextField");
+    f.setLayout(new FlowLayout());
+
+    TextField tf = new TextField("Enter text", 20);
+    f.add(tf);
+
+    f.setSize(300, 150);
+    f.setVisible(true);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays a text field using FlowLayout.</div>
+</div>
+
+<!-- 5 -->
+<div class="program">
+  <h2>5. TextField with Custom Layout</h2>
+  <pre>
+import java.awt.*;
+
+public class CustomTextField {
+  public static void main(String[] args) {
+    Frame f = new Frame("Custom Layout TextField");
+    f.setLayout(null);
+
+    TextField tf = new TextField("Enter text");
+    tf.setBounds(100, 100, 150, 30);
+    f.add(tf);
+
+    f.setSize(350, 200);
+    f.setVisible(true);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays a text field at custom position.</div>
+</div>
+<!-- 6 -->
+<div class="program">
+  <h2>6. AWT Checkbox with FlowLayout Manager</h2>
+  <pre>
+// Create a simple AWT application that displays a Checkbox using FlowLayout manager.
+import java.awt.*;
+
+public class FlowCheckbox {
+  public static void main(String[] args) {
+    Frame f = new Frame("FlowLayout Checkbox");
+    f.setLayout(new FlowLayout());
+
+    Checkbox cb = new Checkbox("Accept Terms");
+    f.add(cb);
+
+    f.setSize(300, 150);
+    f.setVisible(true);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays a checkbox using FlowLayout.</div>
+</div>
+
+<!-- 7 -->
+<div class="program">
+  <h2>7. AWT Checkbox with Custom Layout</h2>
+  <pre>
+// Create a simple AWT application that displays a Checkbox using Custom Layout.
+import java.awt.*;
+
+public class CustomCheckbox {
+  public static void main(String[] args) {
+    Frame f = new Frame("Custom Layout Checkbox");
+    f.setLayout(null);
+
+    Checkbox cb = new Checkbox("Subscribe");
+    cb.setBounds(100, 100, 100, 30);
+    f.add(cb);
+
+    f.setSize(300, 200);
+    f.setVisible(true);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays a checkbox at custom position.</div>
+</div>
+
+<!-- 8 -->
+<div class="program">
+  <h2>8. AWT Label with FlowLayout Manager</h2>
+  <pre>
+// Create a simple AWT application that displays a Label using FlowLayout manager.
+import java.awt.*;
+
+public class FlowLabel {
+  public static void main(String[] args) {
+    Frame f = new Frame("FlowLayout Label");
+    f.setLayout(new FlowLayout());
+
+    Label l = new Label("Welcome to AWT");
+    f.add(l);
+
+    f.setSize(300, 150);
+    f.setVisible(true);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays a label using FlowLayout.</div>
+</div>
+
+<!-- 9 -->
+<div class="program">
+  <h2>9. AWT Label with Custom Layout</h2>
+  <pre>
+// Create a simple AWT application that displays a Label using Custom Layout.
+import java.awt.*;
+
+public class CustomLabel {
+  public static void main(String[] args) {
+    Frame f = new Frame("Custom Layout Label");
+    f.setLayout(null);
+
+    Label l = new Label("Hello, Goutam!");
+    l.setBounds(100, 100, 150, 30);
+    f.add(l);
+
+    f.setSize(300, 200);
+    f.setVisible(true);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays a label at custom position.</div>
+</div>
+
+<!-- 10 -->
+<div class="program">
+  <h2>10. AWT Choice with FlowLayout Manager</h2>
+  <pre>
+// Create a simple AWT application that displays a Choice with FlowLayout manager.
+import java.awt.*;
+
+public class FlowChoice {
+  public static void main(String[] args) {
+    Frame f = new Frame("FlowLayout Choice");
+    f.setLayout(new FlowLayout());
+
+    Choice ch = new Choice();
+    ch.add("Java");
+    ch.add("Python");
+    ch.add("C++");
+
+    f.add(ch);
+    f.setSize(300, 150);
+    f.setVisible(true);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays a dropdown menu using FlowLayout.</div>
+</div>
+<!-- 11 -->
+<div class="program">
+  <h2>11. AWT Choice with Custom Layout</h2>
+  <pre>
+// Create a simple AWT application that displays a Choice with Custom Layout.
+import java.awt.*;
+
+public class CustomChoice {
+  public static void main(String[] args) {
+    Frame f = new Frame("Custom Layout Choice");
+    f.setLayout(null);
+
+    Choice ch = new Choice();
+    ch.add("Java");
+    ch.add("Python");
+    ch.add("C++");
+    ch.setBounds(100, 100, 100, 30);
+
+    f.add(ch);
+    f.setSize(300, 200);
+    f.setVisible(true);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays a dropdown menu at custom position.</div>
+</div>
+
+<!-- 12 -->
+<div class="program">
+  <h2>12. AWT CheckboxGroup with FlowLayout Manager</h2>
+  <pre>
+// Create a simple AWT application that displays a CheckboxGroup with FlowLayout manager.
+import java.awt.*;
+
+public class FlowCheckboxGroup {
+  public static void main(String[] args) {
+    Frame f = new Frame("FlowLayout CheckboxGroup");
+    f.setLayout(new FlowLayout());
+
+    CheckboxGroup group = new CheckboxGroup();
+    Checkbox cb1 = new Checkbox("Male", group, false);
+    Checkbox cb2 = new Checkbox("Female", group, false);
+
+    f.add(cb1);
+    f.add(cb2);
+    f.setSize(300, 150);
+    f.setVisible(true);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays radio buttons using FlowLayout.</div>
+</div>
+
+<!-- 13 -->
+<div class="program">
+  <h2>13. AWT CheckboxGroup with Custom Layout</h2>
+  <pre>
+// Create a simple AWT application that displays a CheckboxGroup with Custom Layout.
+import java.awt.*;
+
+public class CustomCheckboxGroup {
+  public static void main(String[] args) {
+    Frame f = new Frame("Custom Layout CheckboxGroup");
+    f.setLayout(null);
+
+    CheckboxGroup group = new CheckboxGroup();
+    Checkbox cb1 = new Checkbox("Yes", group, false);
+    Checkbox cb2 = new Checkbox("No", group, false);
+
+    cb1.setBounds(100, 100, 100, 30);
+    cb2.setBounds(100, 140, 100, 30);
+
+    f.add(cb1);
+    f.add(cb2);
+    f.setSize(300, 250);
+    f.setVisible(true);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays radio buttons at custom positions.</div>
+</div>
+
+<!-- 14 -->
+<div class="program">
+  <h2>14. AWT List with FlowLayout Manager</h2>
+  <pre>
+// Create a simple AWT application that displays a List with FlowLayout manager.
+import java.awt.*;
+
+public class FlowList {
+  public static void main(String[] args) {
+    Frame f = new Frame("FlowLayout List");
+    f.setLayout(new FlowLayout());
+
+    List list = new List(5);
+    list.add("Java");
+    list.add("Python");
+    list.add("C++");
+    list.add("JavaScript");
+    list.add("PHP");
+
+    f.add(list);
+    f.setSize(300, 200);
+    f.setVisible(true);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays a list box using FlowLayout.</div>
+</div>
+
+<!-- 15 -->
+<div class="program">
+  <h2>15. AWT List with Custom Layout</h2>
+  <pre>
+// Create a simple AWT application that displays a List with Custom Layout.
+import java.awt.*;
+
+public class CustomList {
+  public static void main(String[] args) {
+    Frame f = new Frame("Custom Layout List");
+    f.setLayout(null);
+
+    List list = new List(5);
+    list.add("Java");
+    list.add("Python");
+    list.add("C++");
+    list.add("JavaScript");
+    list.add("PHP");
+    list.setBounds(100, 100, 100, 100);
+
+    f.add(list);
+    f.setSize(300, 250);
+    f.setVisible(true);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays a list box at custom position.</div>
+</div>
+<!-- 16 -->
+<div class="program">
+  <h2>16. AWT TextArea with FlowLayout Manager</h2>
+  <pre>
+// Create a simple AWT application that displays a TextArea using FlowLayout manager.
+import java.awt.*;
+
+public class FlowTextArea {
+  public static void main(String[] args) {
+    Frame f = new Frame("FlowLayout TextArea");
+    f.setLayout(new FlowLayout());
+
+    TextArea ta = new TextArea("Type here...", 5, 30);
+    f.add(ta);
+
+    f.setSize(400, 200);
+    f.setVisible(true);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays a TextArea using FlowLayout.</div>
+</div>
+
+<!-- 17 -->
+<div class="program">
+  <h2>17. AWT TextArea with Custom Layout</h2>
+  <pre>
+// Create a simple AWT application that displays a TextArea using Custom Layout.
+import java.awt.*;
+
+public class CustomTextArea {
+  public static void main(String[] args) {
+    Frame f = new Frame("Custom Layout TextArea");
+    f.setLayout(null);
+
+    TextArea ta = new TextArea("Type here...");
+    ta.setBounds(100, 100, 200, 100);
+    f.add(ta);
+
+    f.setSize(400, 300);
+    f.setVisible(true);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays a TextArea at custom position.</div>
+</div>
+
+<!-- 18 -->
+<div class="program">
+  <h2>18. AWT Calculator using GridLayout Manager</h2>
+  <pre>
+// Create a simple AWT application that designs a calculator using GridLayout manager.
+import java.awt.*;
+
+public class GridCalculator {
+  public static void main(String[] args) {
+    Frame f = new Frame("AWT Calculator");
+    f.setLayout(new GridLayout(4, 4, 5, 5));
+
+    TextField tf = new TextField();
+    f.add(tf);
+
+    String[] buttons = {
+      "7", "8", "9", "/",
+      "4", "5", "6", "*",
+      "1", "2", "3", "-",
+      "0", ".", "=", "+"
+    };
+
+    for (String label : buttons) {
+      f.add(new Button(label));
+    }
+
+    f.setSize(300, 300);
+    f.setVisible(true);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays a calculator layout with buttons and TextField using GridLayout.</div>
+</div>
+
+  </section>
+</body>
+</html>

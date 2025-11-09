@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Applet Programs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0b0b;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 30px 100px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(11,11,11,0.8);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 400;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff4d4d;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-left: 40px;
+    }
+
+    .login {
+      color: #ff4d4d;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .content {
+      padding: 140px 100px 100px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .program {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    }
+
+    .program h2 {
+      color: #ffb300;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+
+    pre {
+      background: #000;
+      color: #0f0;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .output {
+      background: #1b1b1b;
+      border-radius: 8px;
+      padding: 15px;
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .navbar {
+        padding: 20px 40px;
+      }
+      .content {
+        padding: 120px 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+ 
+
+  <section class="content">
+    <h1>Java Input/Output Programs</h1>
+
+    <!-- Program Blocks Start -->
+    <!-- Each block below follows your glowing modular format -->
+<!-- 1 -->
+<div class="program">
+  <h2>1. Enter a character using InputStreamReader</h2>
+  <pre>
+// Write a Java program to enter a character from user using InputStreamReader.
+import java.io.*;
+
+public class CharInput {
+  public static void main(String[] args) throws IOException {
+    InputStreamReader isr = new InputStreamReader(System.in);
+    System.out.print("Enter a character: ");
+    char ch = (char) isr.read();
+    System.out.println("You entered: " + ch);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays the character entered by the user.</div>
+</div>
+
+<!-- 2 -->
+<div class="program">
+  <h2>2. Enter a string using BufferedReader</h2>
+  <pre>
+// Write a Java program to enter a string from user using BufferedReader.
+import java.io.*;
+
+public class StringInput {
+  public static void main(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    System.out.print("Enter a string: ");
+    String str = br.readLine();
+    System.out.println("You entered: " + str);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays the string entered by the user.</div>
+</div>
+
+<!-- 3 -->
+<div class="program">
+  <h2>3. Enter an integer using Scanner</h2>
+  <pre>
+// Write a Java program to enter an integer from user using Scanner class.
+import java.util.Scanner;
+
+public class IntInput {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter an integer: ");
+    int num = sc.nextInt();
+    System.out.println("You entered: " + num);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays the integer entered by the user.</div>
+</div>
+
+<!-- 4 -->
+<div class="program">
+  <h2>4. Enter a float using Scanner</h2>
+  <pre>
+// Write a Java program to enter a float from user using Scanner class.
+import java.util.Scanner;
+
+public class FloatInput {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a float: ");
+    float num = sc.nextFloat();
+    System.out.println("You entered: " + num);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays the float entered by the user.</div>
+</div>
+
+<!-- 5 -->
+<div class="program">
+  <h2>5. Enter a double using Scanner</h2>
+  <pre>
+// Write a Java program to enter a double from user using Scanner class.
+import java.util.Scanner;
+
+public class DoubleInput {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a double: ");
+    double num = sc.nextDouble();
+    System.out.println("You entered: " + num);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays the double entered by the user.</div>
+</div>
+
+<!-- 6 -->
+<div class="program">
+  <h2>6. Enter a boolean using Scanner</h2>
+  <pre>
+// Write a Java program to enter a boolean from user using Scanner class.
+import java.util.Scanner;
+
+public class BooleanInput {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter true or false: ");
+    boolean flag = sc.nextBoolean();
+    System.out.println("You entered: " + flag);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays the boolean value entered by the user.</div>
+</div>
+
+<!-- 7 -->
+<div class="program">
+  <h2>7. Enter a short integer using Scanner</h2>
+  <pre>
+// Write a Java program to enter a short integer from user using Scanner class.
+import java.util.Scanner;
+
+public class ShortInput {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a short integer: ");
+    short num = sc.nextShort();
+    System.out.println("You entered: " + num);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays the short integer entered by the user.</div>
+</div>
+
+<!-- 8 -->
+<div class="program">
+  <h2>8. Enter a long integer using Scanner</h2>
+  <pre>
+// Write a Java program to enter a long integer from user using Scanner class.
+import java.util.Scanner;
+
+public class LongInput {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a long integer: ");
+    long num = sc.nextLong();
+    System.out.println("You entered: " + num);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays the long integer entered by the user.</div>
+</div>
+
+<!-- 9 -->
+<div class="program">
+  <h2>9. Get all characters from a file and display on screen</h2>
+  <pre>
+// Write a Java program to get all characters from the file and display on the screen.
+import java.io.*;
+
+public class FileCharDisplay {
+  public static void main(String[] args) throws IOException {
+    FileReader fr = new FileReader("sample.txt");
+    int ch;
+    while ((ch = fr.read()) != -1) {
+      System.out.print((char) ch);
+    }
+    fr.close();
+  }
+}
+  </pre>
+  <div class="output">Output: Displays all characters from sample.txt file.</div>
+</div>
+
+<!-- 10 -->
+<div class="program">
+  <h2>10. Get all characters from file, count lines, words, characters</h2>
+  <pre>
+// Write a Java program to get all characters from the file,
+// count number of lines, words, characters and display on the screen.
+import java.io.*;
+
+public class FileStats {
+  public static void main(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new FileReader("sample.txt"));
+    String line;
+    int lines = 0, words = 0, chars = 0;
+
+    while ((line = br.readLine()) != null) {
+      lines++;
+      words += line.split("\\s+").length;
+      chars += line.length();
+    }
+    br.close();
+
+    System.out.println("Lines: " + lines);
+    System.out.println("Words: " + words);
+    System.out.println("Characters: " + chars);
+  }
+}
+  </pre>
+  <div class="output">Output: Displays line, word, and character count from sample.txt.</div>
+</div>
+
+  </section>
+</body>
+</html>
