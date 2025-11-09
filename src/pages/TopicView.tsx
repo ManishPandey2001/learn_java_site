@@ -1,5 +1,3 @@
-// src/pages/TopicView.tsx
-import React from "react";
 import { useParams } from "react-router-dom";
 import { topics } from "../topics";
 
